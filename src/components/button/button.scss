@@ -1,0 +1,6 @@
+@import "../../styles/const-width";
+@import "../../styles/mixins";
+
+.button {
+  @include button;
+}

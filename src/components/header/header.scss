@@ -1,0 +1,10 @@
+@import "../../styles/colors.scss";
+@import "../../styles/const-width.scss";
+
+.header {
+  background-color: $color-service--lightest;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 60px;
+  }
+}
