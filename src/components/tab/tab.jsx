@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 import './tab.scss';
 
-const Tab = ({ name, className, children }) => {
+const Tab = ({ nameButton, className, children, onClick }) => {
     return (
-        <button
+        <button onClick={(evt) => onClick(evt)}
             className={`tab ${className}`}
             type="button">
             {children}
-            {name}
+            {nameButton}
         </button>
     );
 };
@@ -17,6 +17,7 @@ const Tab = ({ name, className, children }) => {
 Tab.propTypes = {
     className: PropTypes.string.isRequired,
     nameButton: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
     children: PropTypes.object.isRequired
 };
 

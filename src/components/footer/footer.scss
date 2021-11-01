@@ -109,6 +109,9 @@
   line-height: 17px;
   font-weight: 400;
   color: $color-service--light;
+    @media (max-width: $mobile-width-only) {
+      width: 167px;
+  }
 }
 
 .footer__tel {

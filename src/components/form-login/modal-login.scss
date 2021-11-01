@@ -1,4 +1,7 @@
-.form-login {
+@import "../../styles/colors";
+@import "../../styles/const-width";
+
+.modal-login {
   position: relative;
   width: 100%;
   height: auto;
@@ -20,22 +23,22 @@
   }
 }
 
-.form-login__input {
+.modal-login__input {
   margin-top: 30px;
   position: relative;
 }
 
-.form-login__logo {
+.modal-login__logo {
   padding-left: 0;
 }
 
-.form-login__wrapper {
+.modal-login__wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.form-login__submit {
+.modal-login__submit {
   min-width: 100%;
   margin-top: 30px;
 
@@ -44,7 +47,7 @@
   }
 }
 
-.form-login__link {
+.modal-login__link {
   cursor: pointer;
   font-size: 12px;
   line-height: 16px;
@@ -60,7 +63,7 @@
   }
 }
 
-.form-login__input-wrapper {
+.modal-login__input-wrapper {
   position: relative;
 }
 

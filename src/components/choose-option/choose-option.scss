@@ -1,6 +1,6 @@
 @import "../../styles/const-width";
 
-.calculator-select {
+.choose-options {
   margin-bottom: 30px;
 
   @media (max-width: $mobile-width-only) {
@@ -8,7 +8,7 @@
   }
 }
 
-.calculator-select__subtitle {
+.choose-options__subtitle {
   margin-bottom: 15px;
 
   @media (min-width: $tablet-width) {

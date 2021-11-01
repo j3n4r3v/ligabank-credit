@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { CalculatorOptions } from '../calculator-options/calculator-options';
+import { ChooseOption } from '../choose-option/choose-option';
 // import { SuccessModal } from '../success-modal/success-modal';
 import { Summary } from '../summary/summary';
 
@@ -12,7 +12,7 @@ const Calculator = ({ className }) => {
     return (
         <section className={`${className} calculator wrapper`} id="calculator">
             <h2 className="calculator__title">Кредитный калькулятор</h2>
-            <CalculatorOptions className="calculator__options" />
+            <ChooseOption className="calculator__options" />
             {
                 <Summary className="calculator__summary" />}
             {/* {

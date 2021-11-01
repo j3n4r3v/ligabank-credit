@@ -49,6 +49,10 @@
   &--column .menu__item--only-header {
     display: none;
   }
+
+    &--column .menu__item--only-burger {
+    display: none;
+  }
 }
 
 .menu__item--only-footer {

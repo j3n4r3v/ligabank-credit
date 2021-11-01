@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 import './input.scss';
 
-const Input = (props) => {
+const Input = ({ desc, label, className, type, ...props}) => {
     return (
-        <label className={`${props.className} input`}>
+        <label className={`${className} input`}>
             <span className="input__label">
-                {props.label}
+                {label}
             </span>
-            <input {...props} className="input__text" type={props.type || 'number'} />
+            <input {...props} className="input__text" type={type || 'number'} />
             <span className="input__desc">
-                {props.desc}
+                {desc}
             </span>
         </label>
     );

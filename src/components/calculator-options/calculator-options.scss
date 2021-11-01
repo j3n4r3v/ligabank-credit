@@ -1,7 +1,7 @@
 @import "../../styles/const-width";
 @import "../../styles/mixins";
 
-.calculator-options {
+.choose-options {
   display: flex;
   flex-direction: column;
 
@@ -11,26 +11,26 @@
   }
 }
 
-.calculator-options__left,
-.calculator-options__right {
+.choose-options__left,
+.choose-options__right {
   flex-grow: 1;
   width: 100%;
 }
 
-.calculator-options__left {
+.choose-options__left {
   @media (max-width: $tablet-width-only) {
     margin-bottom: 0;
   }
 }
 
-.calculator-options__right {
+.choose-options__right {
   @media (min-width: $desktop-width) {
     max-width: 48.7%;
     margin-top: 0;
   }
 }
 
-.calculator-options h3 {
+.choose-options h3 {
   @include title;
   font-size: 16px;
   line-height: 22px;

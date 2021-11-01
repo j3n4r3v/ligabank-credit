@@ -1,12 +1,21 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeVisibleMenu } from '../../store/actions';
+import PropTypes from 'prop-types';
 
 import './burger.scss';
 
 const Burger = ({ className }) => {
 
+    const dispatch = useDispatch();
+    const mobileMenuIsOpen = useSelector(state => state.mobileMenuIsOpen);
+
+    const onClickBurger = () => {
+        dispatch(changeVisibleMenu(!mobileMenuIsOpen));
+    };
+
     return (
-        <button className={`${className} burger`} type="button">
+        <button className={`${className} burger`} onClick={() => onClickBurger()} type="button">
             <span className="visually-hidden">
                 Меню
             </span>

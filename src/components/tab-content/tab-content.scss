@@ -172,11 +172,16 @@
   }
 
   &:before {
-    content: '\2304';
+    content: '';
     position: absolute;
-    top: 2px;
-    left: 0;
-    font-size: 20px;
-    color: $color-service;
+    top: 7px;
+    left: -2px;
+    width: 11px;
+    height: 11px;
+    background: url(./check.svg);
+
+    @media (min-width: $desktop-width) {
+      top: 14px;
+    }
   }
 }

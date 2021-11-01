@@ -1,16 +1,45 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
+import { ESC_CODE } from '../utils/const';
 import { CloseButton } from '../close-button/close-button';
 
 import './modal.scss';
 
-const Modal = ({ children }) => {
+const Modal = ({ children, closeModal }) => {
+
+    const overlayRef = useRef();
+
+    useEffect(() => {
+        const preventWheelScroll = (evt) => evt.preventDefault();
+        document.addEventListener('keydown', onEscClick);
+        window.addEventListener('wheel', preventWheelScroll, { passive: false });
+        return () => {
+            document.removeEventListener('keydown', onEscClick);
+            window.removeEventListener('wheel', preventWheelScroll);
+        };
+    });
+
+    const onCloseModalButtonClick = () => {
+        closeModal();
+    };
+
+    const onEscClick = (event) => {
+        if (event.keyCode === ESC_CODE) {
+            closeModal();
+        }
+    };
+
+    const onOverlayClick = (evt) => {
+        evt.target === overlayRef.current && closeModal();
+    };
 
     return (
-        <div className="overlay" >
+        <div className="overlay" ref={overlayRef}
+            onClick={(evt) => onOverlayClick(evt)}>
             <div className="modal">
-                <CloseButton className="form-login__close" />
+                <CloseButton className="modal-login__close"
+                    onClick={() => onCloseModalButtonClick()} />
                 {children}
             </div>
         </div>

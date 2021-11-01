@@ -41,7 +41,7 @@
     position: absolute;
     background-color: $color-service--lightest;
     overflow-y: scroll;
-    padding: 32px 15px 0;
+    padding: 33px 15px 0;
     width: 100%;
     z-index: 50;
     height: 100vh;
@@ -74,4 +74,28 @@
   @media (max-width: $mobile-width-only) {
     display: none;
   }
+}
+
+.burger__button--mobile {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu__item--only-burger {
+  display: none;
+}
+
+.menu--open > .menu__item--only-burger {
+  @media (max-width: $mobile-width-only) {
+    display: block;
+  }
+}
+
+.menu--open .menu__item {
+    padding-left: 15px;
+}
+
+.menu--open .menu__link--active {
+    color: $color-black;
 }

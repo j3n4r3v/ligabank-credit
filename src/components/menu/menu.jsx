@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+
+import { SignIn } from '../sign-in/sign-in';
 
 import './menu.scss';
 
 const Menu = ({ className }) => {
 
+    const mobileMenuIsOpen = useSelector(state => state.mobileMenuIsOpen);
+
     return (
-        <div className={`menu ${className}`}>
+        <div className={`menu ${className} ${!mobileMenuIsOpen ? 'menu--closed' : 'menu--open'}`}>
             <span className="menu__item">
                 <a href="/" className="menu__link">
                     Услуги
@@ -31,6 +36,9 @@ const Menu = ({ className }) => {
                 <a href="/" className="menu__link">
                     Задать вопрос
                 </a>
+            </span>
+            <span className="menu__item menu__item--only-burger">
+                {mobileMenuIsOpen && <SignIn className="main-nav__sign-in" />}
             </span>
         </div>
     );

@@ -7,6 +7,10 @@
   list-style: none;
   bottom: 5%;
   left: calc(50% - 24px);
+    @media (min-width: 768px) {
+      bottom: 3%;
+      left: calc(50% - 37px);
+    }
 }
 
 .indicator {

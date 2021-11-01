@@ -1,4 +1,6 @@
 export const ESC_CODE = 27;
+export const SLIDER_TIMEOUT = 4000;
+export const PASSWORD_LENGTH = 8;
 
 export const Tabs = {
     DEPOSITS: 'DEPOSITS',

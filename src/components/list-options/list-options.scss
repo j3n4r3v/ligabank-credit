@@ -2,7 +2,7 @@
 @import "../../styles/const-width";
 @import "../../styles/mixins";
 
-.select {
+.list {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +22,7 @@
   }
 }
 
-.select--open {
+.list--open {
   &::before {
     content: "";
     position: absolute;
@@ -32,13 +32,13 @@
     width: 18px;
     height: 11px;
 
-    background-image: url("select.svg");
+    background-image: url("option.svg");
     background-repeat: no-repeat;
     transform: rotate(180deg);
   }
 }
 
-.select--close {
+.list--close {
   &::before {
     content: "";
     position: absolute;
@@ -48,12 +48,12 @@
     width: 18px;
     height: 11px;
 
-    background-image: url("select.svg");
+    background-image: url("option.svg");
     background-repeat: no-repeat;
   }
 }
 
-.select__options {
+.list__options {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,7 +61,7 @@
   flex-grow: 1;
 }
 
-.select__option {
+.list__option {
   flex-grow: 1;
 
   font-size: 16px;
@@ -71,7 +71,6 @@
   border-bottom: 1px $color-service solid;
   padding: 18px 23px;
   cursor: pointer;
-
 
   &:nth-child(n):not(&--title) {
     &:hover,
