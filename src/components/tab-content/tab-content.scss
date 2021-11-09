@@ -62,6 +62,12 @@
   line-height: 25px;
   font-weight: 400;
   padding-top: 10px;
+  
+    @media (max-width: $tablet-width) {
+      padding-left: 20px;
+      font-size: 14px;
+      line-height: 18px;
+  }
 }
 
 .tab-content__left {
