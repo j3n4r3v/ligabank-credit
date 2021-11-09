@@ -12,8 +12,8 @@ const Modal = ({ children, closeModal }) => {
 
     useEffect(() => {
         const preventWheelScroll = (evt) => evt.preventDefault();
-        document.addEventListener('keydown', onEscClick);
-        window.addEventListener('wheel', preventWheelScroll, { passive: false });
+            document.addEventListener('keydown', onEscClick);
+            window.addEventListener('wheel', preventWheelScroll, { passive: false });
         return () => {
             document.removeEventListener('keydown', onEscClick);
             window.removeEventListener('wheel', preventWheelScroll);

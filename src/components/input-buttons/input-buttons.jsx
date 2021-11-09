@@ -10,21 +10,37 @@ const NamesButton = {
     MINUS: 'MINUS',
 };
 
-const InputButtons = ({ className, step, value, ...rest }) => {
+const InputButtons = ({ className, onChange, step, value, ...rest }) => {
+
+    const onValueChange = (target) => {
+        switch (target) {
+            case NamesButton.MINUS:
+                return onChange(Number(value) - step);
+            case NamesButton.PLUS:
+                return onChange(Number(value) + step);
+            default:
+                return onChange(target);
+        }
+    };
 
     return (
         <div className={`input-buttons ${className}`}>
-            <button className="input-buttons__button input-buttons__button--minus" name={NamesButton.MINUS}>−</button>
-            <button className="input-buttons__button input-buttons__button--plus" name={NamesButton.PLUS}>+</button>
-            <InputFormat {...rest}
+            <button onClick={(evt) => onValueChange(evt.target.name)} className="input-buttons__button input-buttons__button--minus" name={NamesButton.MINUS}>−</button>
+            <button onClick={(evt) => onValueChange(evt.target.name)} className="input-buttons__button input-buttons__button--plus" name={NamesButton.PLUS}>+</button>
+
+            <InputFormat
+                className="input-buttons__input"
                 value={value}
-                className="input-buttons__input" />
+                onChangeValue={(value) => onValueChange(value)}
+                {...rest}
+            />
         </div>
     );
 };
 
 InputButtons.propTypes = {
     className: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     label: PropTypes.string,
     step: PropTypes.number

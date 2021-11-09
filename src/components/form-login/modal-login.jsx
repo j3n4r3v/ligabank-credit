@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { changeVisibleModalLogin, login } from '../../store/actions';
 import { saveLoginToLocalStorage } from '../../store/local-storage';
-import { getWordsFromValue } from '../utils/utils';
+import { getWordsLengthFromValue } from '../utils/utils';
 import { PASSWORD_LENGTH } from '../utils/const';
 
 import { Button } from '../button/button';
@@ -54,7 +54,7 @@ const ModalLogin = () => {
                     ? '' : 'Email введен некорректно';
             case 'password':
                 return value && value.length >= PASSWORD_LENGTH
-                    ? '' : `Пароль должен быть больше ${getWordsFromValue(PASSWORD_LENGTH, ['символ', 'символа', 'символов'])}`;
+                    ? '' : `Пароль должен быть больше ${getWordsLengthFromValue(PASSWORD_LENGTH, ['символ', 'символа', 'символов'])}`;
             default:
                 break;
         }

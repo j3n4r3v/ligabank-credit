@@ -5,9 +5,9 @@ import { Modal } from '../modal/modal';
 
 import './success-modal.scss';
 
-const SuccessModal = ({ className }) => {
+const SuccessModal = ({ className, changeVisibilitySuccess }) => {
     return (
-        <Modal>
+        <Modal closeModal={() => changeVisibilitySuccess(false)}>
             <InfoSuccess className={className} />
         </Modal>
     );

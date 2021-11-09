@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
-import './list-options.scss';
+import './options-list.scss';
 
-const ListOptions = ({ options, className, onChange, title }) => {
+const OptionsList = ({ options, className, onChange, title }) => {
 
     const [isOpenList, setIsOpenList] = useState(false);
     const option = useSelector(state => state.option);
@@ -12,7 +12,6 @@ const ListOptions = ({ options, className, onChange, title }) => {
     const onListClick = () => {
         setIsOpenList(!isOpenList);
     };
-
 
     return (
         <div onClick={() => onListClick()} className={`${className} list ${isOpenList ? 'list--open' : 'list--close'}`}>
@@ -33,11 +32,11 @@ const ListOptions = ({ options, className, onChange, title }) => {
     );
 };
 
-ListOptions.propTypes = {
+OptionsList.propTypes = {
     className: PropTypes.string.isRequired,
     options: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired
 };
 
-export { ListOptions };
+export { OptionsList };

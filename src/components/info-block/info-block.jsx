@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+
+import { CreditTarget } from '../utils/const';
 
 import './info-block.scss';
 
@@ -13,18 +16,24 @@ const InfoBlock = ({ className, title, desc, type }) => {
 };
 
 const InfoSuccess = ({ className }) => (
-    <InfoBlock title="Спасибо за обращение в наш банк."
+    <InfoBlock
+        title="Спасибо за обращение в наш банк."
         desc="Наш менеджер скоро свяжется с вами по указанному номеру телефона."
         type="center"
-        className={className} />
+        className={className}
+    />
 );
 
 const InfoError = ({ className }) => {
+    const isCredit = useSelector(state => state.option === CreditTarget.AUTO_CREDIT);
 
     return (
-        <InfoBlock title={`Наш банк не выдаёт автомобильные кредиты меньше 200 000 рублей.`}
+        <InfoBlock
+            title={`Наш банк не выдаёт ${isCredit ? 'автомобильные' : 'ипотечные'}
+                    кредиты меньше ${isCredit ? '2' : '5'}00 000 рублей.`}
             desc="Попробуйте использовать другие параметры для расчёта."
-            className={className} />
+            className={className}
+        />
     );
 };
 

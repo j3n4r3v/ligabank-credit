@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './input.scss';
-
 const Input = ({ desc, label, className, type, ...props}) => {
     return (
         <label className={`${className} input`}>

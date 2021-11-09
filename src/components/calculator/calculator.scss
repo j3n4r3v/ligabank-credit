@@ -31,8 +31,8 @@
   margin-bottom: 30px;
 
   @media (max-width: $tablet-width-only) {
-      font-size: 32px;
-      line-height: 44px;
+    font-size: 32px;
+    line-height: 44px;
   }
 
   @media (max-width: $mobile-width-only) {
@@ -52,7 +52,7 @@
   }
 }
 
-.calculator__options {
+.calculator__calculator-options {
   @media (min-width: $desktop-width) {
     margin-bottom: 60px;
   }
