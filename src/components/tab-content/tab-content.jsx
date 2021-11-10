@@ -36,13 +36,9 @@ const TabContent = ({ className, title, list, button, img, desc }) => {
                 {desc && <p className="tab-content__desc">{desc}</p>}
             </div>
             <div className="tab-content__right">
-                {/* <img className="tab-content__img"
-                    src={img.src}
-                    alt={img.alt}
-                /> */}
                 <picture>
-                    <source srcSet={img.srcTablet} media="(max-width: 768.2px)" />
-                    <source srcSet={img.srcDesktop} media="(max-width: 1024.2px)" />
+                    <source srcSet={img.srcDesktop} media="(min-width: 1024.2px)" />
+                    <source srcSet={img.srcTablet} media="(min-width: 768.2px)" />
                     <img className="tab-content__img" src={img.srcMobile} alt={img.alt} />
                 </picture>
             </div>
