@@ -15,9 +15,9 @@ const InputButtons = ({ className, onChange, step, value, ...rest }) => {
     const onValueChange = (target) => {
         switch (target) {
             case NamesButton.MINUS:
-                return onChange(Number(value) - step);
+                return onChange(value - step);
             case NamesButton.PLUS:
-                return onChange(Number(value) + step);
+                return onChange(value + step);
             default:
                 return onChange(target);
         }

@@ -1,10 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import deposits from './deposits.png';
-import credits from './credits.png';
-import insurance from './insurance.png';
-import services from './services.png';
+import depositsMobile from './deposits-mobile.png';
+import creditsMobile from './credits-mobile.png';
+import insuranceMobile from './insurance-mobile.png';
+import servicesMobile from './services-mobile.png';
+
+import depositsTablet from './deposits-tablet.png';
+import creditsTablet from './credits-tablet.png';
+import insuranceTablet from './insurance-tablet.png';
+import servicesTablet from './services-tablet.png';
+
+import depositsDesktop from './deposits-desktop.png';
+import creditsDesktop from './credits-desktop.png';
+import insuranceDesktop from './insurance-desktop.png';
+import servicesDesktop from './services-desktop.png';
 
 import './tab-content.scss';
 
@@ -26,10 +36,15 @@ const TabContent = ({ className, title, list, button, img, desc }) => {
                 {desc && <p className="tab-content__desc">{desc}</p>}
             </div>
             <div className="tab-content__right">
-                <img className="tab-content__img"
+                {/* <img className="tab-content__img"
                     src={img.src}
                     alt={img.alt}
-                />
+                /> */}
+                <picture>
+                    <source srcSet={img.srcTablet} media="(max-width: 768.2px)" />
+                    <source srcSet={img.srcDesktop} media="(max-width: 1024.2px)" />
+                    <img className="tab-content__img" src={img.srcMobile} alt={img.alt} />
+                </picture>
             </div>
         </section>
     );
@@ -45,7 +60,9 @@ const Deposits = ({ className }) => (
         }}
         img={{
             alt: 'Копилка',
-            src: deposits
+            srcMobile: depositsMobile,
+            srcTablet: depositsTablet,
+            srcDesktop: depositsDesktop
         }} />
 );
 
@@ -56,7 +73,9 @@ const Credits = ({ className }) => (
         desc={<>Рассчитайте ежемесячный платеж и ставку по кредиту воспользовавшись нашим <span className="text-decoration">кредитным калькулятором</span></>}
         img={{
             alt: 'Машина',
-            src: credits
+            srcMobile: creditsMobile,
+            srcTablet: creditsTablet,
+            srcDesktop: creditsDesktop
         }} />
 );
 
@@ -70,7 +89,10 @@ const Insurance = ({ className }) => (
         }}
         img={{
             alt: 'Замок',
-            src: insurance
+            srcMobile: insuranceMobile,
+            srcTablet: insuranceTablet,
+            srcDesktop: insuranceDesktop
+
         }} />
 );
 
@@ -84,13 +106,18 @@ const Services = ({ className }) => (
         }}
         img={{
             alt: 'Смартфон',
-            src: services
+            srcMobile: servicesMobile,
+            srcTablet: servicesTablet,
+            srcDesktop: servicesDesktop
         }} />
 );
 
 TabContent.propTypes = {
     className: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    srcMobile: PropTypes.string.isRequired,
+    srcTablet: PropTypes.string.isRequired,
+    srcDesktop: PropTypes.string.isRequired,
     list: PropTypes.arrayOf(PropTypes.string),
     button: PropTypes.shape({ title: PropTypes.string, href: PropTypes.string }),
     img: PropTypes.shape({ alt: PropTypes.string, src: PropTypes.string }),
