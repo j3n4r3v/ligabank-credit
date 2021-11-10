@@ -16,7 +16,7 @@ const Footer = () => {
                         <p className="footer__desk">
                             150015, г.&nbsp;Москва, ул.&nbsp;Московская,&nbsp;д.&nbsp;32
                             Генеральная&nbsp;лицензия Банка&nbsp;России&nbsp;№1050
-                            Ⓒ&nbsp;Лига&nbsp;Банк, 2021
+                            Ⓒ&nbsp;Лига&nbsp;Банк, 2019
                         </p>
                     </div>
                     <Menu className="footer__menu menu--column" />

@@ -10,8 +10,13 @@
   padding: 53px 14px;
 
   @media (min-width: $tablet-width) {
-    padding: 57px 44px;
+    padding: 55px 48px;
+    padding-top: 50px;
     min-height: 380px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding-bottom: 59px;
   }
 
   @media (min-width: $desktop-width) {
@@ -26,7 +31,7 @@
   min-width: 100%;
 
   @media (min-width: $tablet-width) {
-    padding: 12px 31px;
+    padding: 12px 30px;
     min-width: auto;
   }
 
@@ -34,7 +39,7 @@
     font-size: 16px;
     max-width: 198px;
     min-width: auto;
-    padding: 13px 30px;
+    padding: 13px 29px;
   }
 }
 
@@ -94,7 +99,7 @@
   @media (max-width: $mobile-width-only) {
     position: absolute;
     right: 0;
-    top: 25%;
+    top: 28%;
   }
 
   @media (min-width: $tablet-width) {
@@ -116,12 +121,12 @@
 
   @media (max-width: $mobile-width-only) {
     object-position: 50%;
-    height: 87px;
-    width: 113px;
+    width: 87px;
+    height: 113px;
   }
 
   @media (min-width: $tablet-width) {
-    object-position: 95%;
+    object-position: 113%;
     height: 260px;
     width: 289px;
   }
@@ -140,7 +145,7 @@
 
   @media (max-width: $mobile-width-only) {
     max-width: 80%;
-    margin-bottom: 17px;
+    margin-bottom: 19px;
   }
 
   @media (min-width: $tablet-width) {
@@ -187,6 +192,10 @@
     width: 11px;
     height: 11px;
     background: url(./check.svg);
+
+    @media (min-width: $tablet-width) {
+      top: 14px;
+    }
 
     @media (min-width: $desktop-width) {
       top: 14px;

@@ -53,14 +53,15 @@
   font-size: 14px;
 
   @media (min-width: $tablet-width) {
-    margin-top: 10px;
+    margin-top: 8px;
+    margin-left: -2px;
     font-size: 16px;
   }
 
   @media (min-width: $desktop-width) {
-    margin-top: 52px;
-    padding-left: 22px;
-    margin-left: 5px;
+    margin-top: 50px;
+    padding-left: 23px;
+    margin-left: 9px;
   }
 }
 
@@ -78,7 +79,7 @@
   margin-right: 10px;
 
   @media (max-width: $mobile-width-only) {
-    margin-top: 35px;
+    margin-top: 32px;
     width: 137px;
   }
 }
@@ -98,9 +99,13 @@
 .footer__logo {
   padding-bottom: 13px;
 
-  @media (max-width: $mobile-width-only) {
+  @media (max-width: $tablet-width) {
     padding-bottom: 0;
     padding-left: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 15px;
   }
 }
 
@@ -109,8 +114,12 @@
   line-height: 17px;
   font-weight: 400;
   color: $color-service--light;
-    @media (max-width: $mobile-width-only) {
-      width: 167px;
+
+    @media (max-width: $tablet-width) {
+      width: 168px;
+  }
+      @media (min-width: $desktop-width) {
+      padding-left: 8px;
   }
 }
 
@@ -135,17 +144,18 @@
   margin-top: 20px;
   margin-right: 57px;
 
-  @media (min-width: $desktop-width) {
-    margin-top: 57px;
-  }
-
-  @media (max-width: $tablet-width-only) {
-    padding-left: 54px;
-  }
-
     @media (max-width: $mobile-width-only) {
-    margin-top: 13px;
-    padding-left: 32px;
+      margin-top: 13px;
+      padding-left: 32px;
+  }
+
+    @media (min-width: $tablet-width) {
+      margin-top: 21px;
+      margin-left: 3px;
+  }
+
+    @media (min-width: $desktop-width) {
+      margin-top: 57px;
   }
 }
 
@@ -173,6 +183,16 @@
     margin-top: 10px;
     padding-left: 30px;
   }
+
+  @media (min-width: $tablet-width) {
+    margin-top: 56px;
+    margin-left: 2px;
+  }
+    
+  @media (min-width: $desktop-width) {
+    margin-top: 60px;
+    margin-right: 48px;
+  }
 }
 
 .footer__mobile-icon {
@@ -186,6 +206,10 @@
   @media (max-width: $mobile-width-only) {
     left: 0;
   }
+    @media (min-width: $desktop-width) {
+    left:28px;
+    left: 0;
+  }
 }
 
 .footer__social {
@@ -193,6 +217,7 @@
 
   @media (min-width: $tablet-width) {
     margin-top: 22px;
+    margin-left: 4px;
   }
 
   @media (min-width: $desktop-width) {

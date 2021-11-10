@@ -1,4 +1,5 @@
 @import "../../styles/mixins";
+@import "../../styles/const-width";
 
 .tab {
   @include tab;
@@ -6,4 +7,7 @@
 
 .tab svg {
   margin: 5px;
+    @media (min-width: $desktop-width) {
+    margin-right: 10px;
+  }
 }

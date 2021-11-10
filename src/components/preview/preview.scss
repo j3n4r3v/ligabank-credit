@@ -52,18 +52,19 @@
   @include title;
   font-size: 38px;
   line-height: 44px;
-  margin-bottom: 27px;
+  margin-bottom: 25px;
 
   @media (min-width: $tablet-width) {
     font-size: 46px;
     line-height: 53px;
-    margin-bottom: 23px;
+    margin-bottom: 25px;
   }
 
   @media (min-width: $desktop-width) {
     font-size: 54px;
     line-height: 64px;
     margin-bottom: 34px;
+    margin-left: -4px;
   }
 
   &--light {
@@ -85,23 +86,26 @@
   @media (min-width: $tablet-width) {
     font-size: 18px;
     line-height: 25px;
-    padding-top: 10px;
+    padding-top: 5px;
   }
 
   @media (min-width: $desktop-width) {
     font-size: 22px;
+    padding-top: 9px;
   }
 }
 
 .preview__left {
   position: relative;
   z-index: 15;
-  margin-left: 15px;
-  padding-top: 36px;
+  margin-left: 14px;
+  padding-top: 39px;
+  // padding-top: 22px;
+  // margin-left: 4px;
 
   @media (min-width: $tablet-width) {
     margin-left: 86px;
-    padding-top: 62px;
+    padding-top: 66px;
   }
 
   @media (min-width: $desktop-width) {
