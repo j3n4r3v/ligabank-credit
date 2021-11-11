@@ -22,30 +22,35 @@ const TabContent = ({ className, title, list, button, img, desc }) => {
     return (
         <section className={`${className} tab-content`}>
             <div className="tab-content__left">
-                <h3 className="tab-content__title">
-                    {title}
-                </h3>
-                <ul className="tab-content__list">
+
+                <div className="tab-content__info">
+                    <h3 className="tab-content__title">
+                        {title}
+                    </h3>
+                    <ul className="tab-content__list">
 
                     {list.map((item, i) =>
                         <li key={i + item} className="tab-content__item">
                             {item}
                         </li>
                     )}
-                </ul>
-                
-                {desc && <p className="tab-content__desc">{desc}</p>}
+                    </ul>
+                    {desc && <p className="tab-content__desc">{desc}</p>}
+                </div>
+
+                <div className="tab-content__button">
+                    {button && <a href={button.href} className="tab-content__btn">{button.title}</a>}
+                </div>
             </div>
+  
             <div className="tab-content__right">
                 <picture>
                     <source srcSet={img.srcDesktop} media="(min-width: 1024.2px)" />
                     <source srcSet={img.srcTablet} media="(min-width: 768.2px)" />
-                    <img className="tab-content__img" src={img.srcMobile} alt={img.alt} />
+                        <img className="tab-content__img" src={img.srcMobile} alt={img.alt} />
                 </picture>
             </div>
-            <div className="tab-content__btn">
-            {button && <a href={button.href} className="tab-content__button">{button.title}</a>}
-            </div>
+
         </section>
     );
 };

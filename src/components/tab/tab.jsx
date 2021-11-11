@@ -9,8 +9,8 @@ const Tab = ({ nameButton, className, children, onClick }) => {
             onClick={(evt) => onClick(evt)}
             className={`tab ${className}`}
             type="button">
-            {nameButton}
-            {children}
+                {children}
+                {nameButton}
             
         </button>
     );

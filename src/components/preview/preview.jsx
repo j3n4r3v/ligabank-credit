@@ -1,17 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import firstSlideMobile from './1-mobile.png';
-import firstSlideTablet from './1-tablet.png';
-import firstSlideDesktop from './1-desktop.png';
-
-import secondSlideMobile from './2-mobile.png';
-import secondSlideTablet from './2-tablet.png';
-import secondSlideDesktop from './2-desktop.png';
-
-import thirdSlideMobile from './3-mobile.png';
-import thirdSlideTablet from './3-tablet.png';
-import thirdSlideDesktop from './3-desktop.png';
+import firstSlide from './1-desktop.png';
+import secondSlide from './2-desktop.png';
+import thirdSlide from './3-desktop.png';
 
 import './preview.scss';
 
@@ -33,11 +25,7 @@ const Preview = ({ className, title, subtitle, button, img, isLight }) => {
                     }
                 </div>
                 <div className="preview__right">
-                <picture>
-                    <source srcSet={img.srcDesktop} media="(min-width: 1024.2px)" />
-                    <source srcSet={img.srcTablet} media="(min-width: 768.2px)" />
-                    <img className="preview__img" src={img.srcMobile} alt={img.alt} />
-                </picture>
+                  <img className="preview__img" src={img.src} alt={img.alt} />
                 </div>
             </div>
         </section>
@@ -55,9 +43,7 @@ const FirstSlide = ({ className }) => (
         }}
         img={{
             alt: 'Пример белой карты клиента нашего банка',
-            srcMobile: firstSlideMobile,
-            srcTablet: firstSlideTablet,
-            srcDesktop: firstSlideDesktop
+            src: firstSlide
         }} />
 );
 
@@ -68,9 +54,7 @@ const SecondSlide = ({ className }) => (
         isLight={false}
         img={{
             alt: 'Клиент нашего банка',
-            srcMobile: secondSlideMobile,
-            srcTablet: secondSlideTablet,
-            srcDesktop: secondSlideDesktop
+            src: secondSlide
         }} />
 );
 
@@ -85,9 +69,7 @@ const ThirdSlide = ({ className }) => (
         }}
         img={{
             alt: 'Клиент нашего банка',
-            srcMobile: thirdSlideMobile,
-            srcTablet: thirdSlideTablet,
-            srcDesktop: thirdSlideDesktop
+            src: thirdSlide
         }} />
 );
 
