@@ -34,13 +34,13 @@ const Summary = ({ className, onClick}) => {
     const validateField = (fieldName, value) => {
         switch (fieldName) {
             case 'email':
-                return value&&value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+                return value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
                     ? '' : 'Email введен некорректно';
             case 'phone':
-                return value&&value.match(/(\+7|8)\d{3}-\d{3}-\d{2}-\d{2}/i)
+                return value.match(/(\+7|8)\d{3}-\d{3}-\d{2}-\d{2}/i)
                     ? '' : 'Телефон введен некорректно';
             case 'name':
-                return value&&value.length > 5
+                return value.length > 8
                     ? '' : 'ФИО не заполнено';
             default:
                 break;
@@ -92,7 +92,7 @@ const Summary = ({ className, onClick}) => {
             <div className="summary__group">
 
                 <InputTel
-                    className={`summary__input ${error.email && 'input--error'}`}
+                    className={`summary__input ${error.phone && 'input--error'}`}
                     id="tel"
                     onChange={(evt) => {
                         setError({ ...error, phone: '' });
@@ -122,6 +122,7 @@ const Summary = ({ className, onClick}) => {
                 className="summary__submit"
                 nameButton="Отправить"
                 onClick={() => onSubmitClick()}
+                name="submit summary info by credit"
             />
 
         </section>

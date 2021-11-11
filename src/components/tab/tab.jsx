@@ -8,7 +8,8 @@ const Tab = ({ nameButton, className, children, onClick }) => {
         <button
             onClick={(evt) => onClick(evt)}
             className={`tab ${className}`}
-            type="button">
+            type="button"
+            name="tab name">
                 {children}
                 {nameButton}
             

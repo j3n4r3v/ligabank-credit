@@ -107,7 +107,11 @@ const Suggest = ({ className, onClick }) => {
                     </p>
                 </div>
             </div>
-            <Button className="suggest__button" nameButton="Оформить заявку" onClick={() => onClick()}
+            <Button
+                className="suggest__button"
+                nameButton="Оформить заявку"
+                onClick={() => onClick()}
+                name="make a request"
             />
         </section>
     );

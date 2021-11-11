@@ -25,7 +25,7 @@ const ModalLogin = () => {
     const [errorPassword, setErrorPassword] = useState('');
     const [isVisiblePassword, setIsVisiblePassword] = useState(false);
   
-    const handleSubmitLoginModal = (evt) => {
+    const onSubmitLoginModal = (evt) => {
         evt.preventDefault();
         const isEmailInvalid = validateField('email', email);
         setErrorEmail(isEmailInvalid);
@@ -51,10 +51,10 @@ const ModalLogin = () => {
     const validateField = (fieldName, value) => {
         switch (fieldName) {
             case 'email':
-                return value && value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+                return !!value && value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
                     ? '' : 'Email введен некорректно';
             case 'password':
-                return value && value.length >= PASSWORD_LENGTH
+                return !!value && value.length >= PASSWORD_LENGTH
                     ? '' : `Пароль должен быть больше ${getWordsLengthFromValue(PASSWORD_LENGTH, ['символ', 'символа', 'символов'])}`;
             default:
                 break;
@@ -63,7 +63,7 @@ const ModalLogin = () => {
 
     return (
         <Modal handleCloseModal={() => onCloseForm()}>
-            <form className="modal-login" onSubmit={(evt) => handleSubmitLoginModal(evt)}>
+            <form className="modal-login" onSubmit={(evt) => onSubmitLoginModal(evt)}>
                 <h2 className="visually-hidden">Введите e-mail и пароль</h2>
                 <div className="modal-login__wrapper">
 
@@ -97,14 +97,24 @@ const ModalLogin = () => {
                             }}
                         />
 
-                        <button className="input__password-img" type="button" onMouseDown={() => setIsVisiblePassword(!isVisiblePassword)}>
+                        <button className="input__password-img"
+                                type="button"
+                                onMouseDown={() => setIsVisiblePassword(!isVisiblePassword)}
+                                name="you can see your password">
+
                             < PasswordTypeOn />
+                            
                         </button>
 
                     </div>
                     <a className="modal-login__link" href="/">Забыли пароль?</a>
 
-                    <Button type="submit" className="modal-login__submit" nameButton="Войти" />
+                    <Button
+                        type="submit"
+                        className="modal-login__submit"
+                        nameButton="Войти"
+                        name="submit info"
+                      />
 
                 </div>
             </form>

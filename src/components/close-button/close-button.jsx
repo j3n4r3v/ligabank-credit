@@ -5,7 +5,10 @@ import './close-button.scss';
 
 const CloseButton = ({ className, onClick }) => {
     return (
-        <button className={`${className} close-button`} onClick={(evt) => onClick(evt)} type="button">Закрыть</button>
+        <button className={`${className} close-button`} onClick={(evt) => onClick(evt)}
+          type="button" name="close button">
+              Закрыть
+          </button>
     );
 };
 

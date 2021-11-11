@@ -6,7 +6,7 @@ import MaskedInput from 'react-maskedinput';
 const InputTel = (props) => {
     const newValue = props.value ? props.value.toString() : '';
     return (
-        <label className={`${props.className} input`} for={props.id}>
+        <label className={`${props.className} input`} htmlFor={props.id}>
             <span className="input__label">
                 {props.label}
             </span>
