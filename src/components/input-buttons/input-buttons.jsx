@@ -10,7 +10,7 @@ const NamesButton = {
     MINUS: 'MINUS',
 };
 
-const InputButtons = ({ className, onChange, step, value, ...rest }) => {
+const InputButtons = ({ className, onChange, step, value, id, ...rest }) => {
 
     const onValueChange = (target) => {
         switch (target) {
@@ -32,6 +32,7 @@ const InputButtons = ({ className, onChange, step, value, ...rest }) => {
                 className="input-buttons__input"
                 value={value}
                 onChangeValue={(value) => onValueChange(value)}
+                id={id}
                 {...rest}
             />
         </div>

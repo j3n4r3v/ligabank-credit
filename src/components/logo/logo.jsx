@@ -9,8 +9,11 @@ import './logo.scss';
 const Logo = ({ className }) => {
     return (
         <a href="/" className={`${className} logo`}>
-            <LogoImg alt="Логотип" className="logo__img" />
-            <LogoText alt="Лига Банк" className="logo__txt" />
+
+            <LogoImg className="logo__img" />
+
+            <LogoText className="logo__txt" />
+            
             <span className="visually-hidden">Главная страница</span>
         </a>
     );

@@ -9,11 +9,15 @@ import './header.scss';
 const Header = () => {
     return (
         <header className="header">
+            
             <MainNav className="header__nav" />
+
             <Slider className="header__slider">
+
                 <FirstSlide className="header__first-slide" />
                 <SecondSlide className="header__second-slide" />
                 <ThirdSlide className="header__third-slide" />
+
             </Slider>
         </header>
     );

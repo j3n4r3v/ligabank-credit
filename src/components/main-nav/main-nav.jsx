@@ -39,12 +39,20 @@ const MainNav = ({ className }) => {
 
     return (
         <nav className={`${className} main-nav wrapper`}>
+
             <Burger className="main-nav__burger" />
+
             <Logo className="main-nav__logo" />
+
             <Menu className="main-nav__menu" />
+
             {mobileMenuIsOpen
+
                 ? <CloseButton className="main-nav__close" onClick={() => onClickClose()} />
-                : <SignIn className="main-nav__sign-in" />}
+
+                : <SignIn className="main-nav__sign-in" />
+            }
+            
         </nav>
     );
 };

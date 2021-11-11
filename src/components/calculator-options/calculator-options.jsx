@@ -41,15 +41,16 @@ const CalculatorOptions = ({ className, onSuggestBtnClick }) => {
 
     return (
         <div className={`${className} calculator-options`}>
-
             <div className="calculator-options__left">
+
                     <CalculatorSelect className="calculator-options__list" />
                 {option != null &&
                     <CalculatorInputs className="calculator-options__inputs" />
                 }
-            </div>
 
+            </div>
             <div className="calculator-options__right">
+
                 {option != null &&
                     <>
                     {creditSum < minCredit
@@ -58,8 +59,8 @@ const CalculatorOptions = ({ className, onSuggestBtnClick }) => {
                     }
                     </>
                 }
-            </div>
 
+            </div>
         </div>
     );
 };

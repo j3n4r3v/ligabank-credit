@@ -7,13 +7,14 @@ import './input-format.scss';
 
 const InputFormat = (props) => {
     return (
-        <label className={`${props.className} input`}>
+        <label className={`${props.className} input`} for={props.id}>
             <span className="input__label">
                 {props.label}
             </span>
 
             <NumberFormat
                 className="input__text"
+                id={props.id}
                 onBlur={props.onBlur}
                 thousandSeparator={' '}
                 value={props.value}

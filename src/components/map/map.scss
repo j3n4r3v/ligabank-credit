@@ -27,6 +27,8 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   height: 381px;
+  width: 100%;
+  border: 0;
 
   @media (min-width: $tablet-width) {
     height: 462px;

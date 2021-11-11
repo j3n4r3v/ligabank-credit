@@ -17,6 +17,7 @@ import {
 import './calculator-inputs.scss';
 
 const CalculatorInputs = ({ className }) => {
+
     const dispatch = useDispatch();
     const cost = useSelector(state => state.cost);
     const fee = useSelector(state => state.fee);
@@ -99,6 +100,7 @@ const CalculatorInputs = ({ className }) => {
 
                 <InputButtons
                     className={`calculator-inputs__price ${errorCost && 'input--error'}`}
+                    id="input-buttons"
                     value={cost}
                     min={minCost}
                     max={maxCost}
@@ -111,6 +113,7 @@ const CalculatorInputs = ({ className }) => {
                 />
                 <Range
                     className="calculator-inputs__range"
+                    id="input-range"
                     onChangeInput={(value) => onFeeChange(value)}
                     onChangeRange={(evt) => onFeeChange(getCostOfPercent(evt.target.value, cost))}
                     onBlur={() => onFeeValidate()}
@@ -126,6 +129,7 @@ const CalculatorInputs = ({ className }) => {
 
                 <Range
                     className="calculator-inputs__range"
+                    id="input-ages"
                     onChangeInput={(value) => onPeriodChange(value)}
                     onChangeRange={(evt) => onPeriodChange(evt.target.value)}
                     onBlur={() => onPeriodValidate()}
@@ -144,10 +148,29 @@ const CalculatorInputs = ({ className }) => {
 
                 {isAutoCredit
                     ? <>
-                        <InputCheckbox className="calculator-inputs__comprehensive-cover" label="Оформить КАСКО в нашем банке" value={useKacko} onChange={(value) => onUseKacko(value)} />
-                        <InputCheckbox className="calculator-inputs__insurance" label="Оформить Страхование жизни в нашем банке" value={useLifeInsurance} onChange={(value) => onUseLifeInsurance(value)} />
+                        <InputCheckbox
+                            className="calculator-inputs__kasko" 
+                            id="kasko"
+                            label="Оформить КАСКО в нашем банке"
+                            value={useKacko} onChange={(value) => onUseKacko(value)}
+                        />
+
+                        <InputCheckbox
+                            className="calculator-inputs__insurance"
+                            id="insurance"
+                            label="Оформить Страхование жизни в нашем банке"
+                            value={useLifeInsurance}
+                            onChange={(value) => onUseLifeInsurance(value)}
+                        />
                     </>
-                    : <InputCheckbox className="calculator-inputs__capital" label="Использовать материнский капитал" value={useMotherCapital} onChange={(value) => onUseMotherCapital(value)} />
+
+                    : <InputCheckbox
+                            className="calculator-inputs__capital"
+                            id="capital"
+                            label="Использовать материнский капитал"
+                            value={useMotherCapital}
+                            onChange={(value) => onUseMotherCapital(value)}
+                      />
                 }
             </div>
         </section>

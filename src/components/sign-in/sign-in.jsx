@@ -30,9 +30,13 @@ const SignIn = ({ className }) => {
     return (
         <div className={`${className} sign-in ${mobileMenuIsOpen ? 'sign-in__mobile--burger' : ''} `}>
             <button type="button" className="sign-in__button" onClick={() => onSignInClick()}>
+
                 <SignInImg />
+
                 <span className={mobileMenuIsOpen ? 'sign-in__text--burger' : 'sign-in__text'}>
+
                     {isLogin && email ? email : 'Войти в Интернет-банк'}
+                    
                 </span>
             </button>
         </div>

@@ -6,11 +6,20 @@ import MaskedInput from 'react-maskedinput';
 const InputTel = (props) => {
     const newValue = props.value ? props.value.toString() : '';
     return (
-        <label className={`${props.className} input`}>
+        <label className={`${props.className} input`} for={props.id}>
             <span className="input__label">
                 {props.label}
             </span>
-            <MaskedInput {...props} value={newValue} mask="+7111-111-11-11" className="input__text" type="text" />
+
+            <MaskedInput 
+                {...props}
+                value={newValue}
+                mask="+7111-111-11-11"
+                className="input__text"
+                type="text"
+                id={props.id}
+            />
+            
             <span className="input__desc">
                 {props.desc}
             </span>

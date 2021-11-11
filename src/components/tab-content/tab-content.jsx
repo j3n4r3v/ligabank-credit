@@ -26,13 +26,14 @@ const TabContent = ({ className, title, list, button, img, desc }) => {
                     {title}
                 </h3>
                 <ul className="tab-content__list">
-                    {list.map((item, index) =>
-                        <li key={index + item} className="tab-content__item">
+
+                    {list.map((item, i) =>
+                        <li key={i + item} className="tab-content__item">
                             {item}
                         </li>
                     )}
                 </ul>
-                {button && <a href={button.href} className="tab-content__button">{button.title}</a>}
+                
                 {desc && <p className="tab-content__desc">{desc}</p>}
             </div>
             <div className="tab-content__right">
@@ -42,12 +43,16 @@ const TabContent = ({ className, title, list, button, img, desc }) => {
                     <img className="tab-content__img" src={img.srcMobile} alt={img.alt} />
                 </picture>
             </div>
+            <div className="tab-content__btn">
+            {button && <a href={button.href} className="tab-content__button">{button.title}</a>}
+            </div>
         </section>
     );
 };
 
 const Deposits = ({ className }) => (
-    <TabContent className={className}
+    <TabContent
+        className={className}
         title="Вклады Лига Банка – это выгодная инвестиция в свое будущее"
         list={['Проценты по вкладам до 7%', 'Разнообразные условия', 'Возможность ежемесячной капитализации или вывод процентов на банковскую карту']}
         button={{
@@ -63,7 +68,8 @@ const Deposits = ({ className }) => (
 );
 
 const Credits = ({ className }) => (
-    <TabContent className={className}
+    <TabContent
+        className={className}
         title="Лига Банк выдает кредиты под любые цели"
         list={['Ипотечный кредит', 'Автокредит', 'Потребительский кредит']}
         desc={<>Рассчитайте ежемесячный платеж и ставку по кредиту воспользовавшись нашим <span className="text-decoration">кредитным калькулятором</span></>}
@@ -76,7 +82,8 @@ const Credits = ({ className }) => (
 );
 
 const Insurance = ({ className }) => (
-    <TabContent className={className}
+    <TabContent
+        className={className}
         title="Лига Страхование — застрахуем все что захотите"
         list={['Автомобильное страхование', 'Страхование жизни и здоровья', 'Страхование недвижимости']}
         button={{
@@ -93,7 +100,8 @@ const Insurance = ({ className }) => (
 );
 
 const Services = ({ className }) => (
-    <TabContent className={className}
+    <TabContent
+        className={className}
         title="Лига Банк — это огромное количество онлайн-сервисов для вашего удобства"
         list={['Мобильный банк, который всегда под рукой', 'Приложение Лига-проездной позволит вам оплачивать билеты по всему миру']}
         button={{
@@ -111,9 +119,6 @@ const Services = ({ className }) => (
 TabContent.propTypes = {
     className: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    srcMobile: PropTypes.string.isRequired,
-    srcTablet: PropTypes.string.isRequired,
-    srcDesktop: PropTypes.string.isRequired,
     list: PropTypes.arrayOf(PropTypes.string),
     button: PropTypes.shape({ title: PropTypes.string, href: PropTypes.string }),
     img: PropTypes.shape({ alt: PropTypes.string, src: PropTypes.string }),

@@ -17,13 +17,14 @@ import './modal-login.scss';
 
 const ModalLogin = () => {
 
+    const dispatch = useDispatch();
+    
     const [email, setEmail] = useState(useSelector(state => state.email));
     const [password, setPassword] = useState(localStorage.getItem('password'));
     const [errorEmail, setErrorEmail] = useState('');
     const [errorPassword, setErrorPassword] = useState('');
     const [isVisiblePassword, setIsVisiblePassword] = useState(false);
-    const dispatch = useDispatch();
-
+  
     const handleSubmitLoginModal = (evt) => {
         evt.preventDefault();
         const isEmailInvalid = validateField('email', email);
@@ -34,11 +35,11 @@ const ModalLogin = () => {
         if (!isEmailInvalid && !isPasswordInvalid) {
             saveLoginToLocalStorage({ email, password });
             dispatch(login(email, password));
-            closeForm();
+            onCloseForm();
         }
     };
 
-    const closeForm = () => {
+    const onCloseForm = () => {
         setErrorEmail('');
         setErrorPassword('');
         setEmail('');
@@ -61,12 +62,15 @@ const ModalLogin = () => {
     };
 
     return (
-        <Modal closeModal={() => closeForm()}>
+        <Modal handleCloseModal={() => onCloseForm()}>
             <form className="modal-login" onSubmit={(evt) => handleSubmitLoginModal(evt)}>
                 <h2 className="visually-hidden">Введите e-mail и пароль</h2>
                 <div className="modal-login__wrapper">
+
                     <Logo className="modal-login__logo" />
-                    <Input id="email"
+
+                    <Input 
+                        id="email"
                         label="Логин"
                         className={`${errorEmail && 'input--error'} modal-login__input`}
                         type="email"
@@ -79,7 +83,9 @@ const ModalLogin = () => {
                         }}
                     />
                     <div className="modal-login__input-wrapper">
-                        <Input id="password"
+                        
+                        <Input 
+                            id="password"
                             label="Пароль"
                             className={`${errorPassword && 'input--error'} modal-login__input input--password`}
                             type={isVisiblePassword ? 'text' : 'password'}
@@ -90,12 +96,16 @@ const ModalLogin = () => {
                                 setPassword(evt.target.value);
                             }}
                         />
+
                         <button className="input__password-img" type="button" onMouseDown={() => setIsVisiblePassword(!isVisiblePassword)}>
                             < PasswordTypeOn />
                         </button>
+
                     </div>
                     <a className="modal-login__link" href="/">Забыли пароль?</a>
+
                     <Button type="submit" className="modal-login__submit" nameButton="Войти" />
+
                 </div>
             </form>
         </Modal>

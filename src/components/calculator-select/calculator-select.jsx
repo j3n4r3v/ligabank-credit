@@ -18,6 +18,7 @@ const CalculatorSelect = ({ className }) => {
     return (
         <section className={`${className} calculator-options`}>
             <h3 className="calculator-options__subtitle">Шаг 1. Цель кредита</h3>
+            
             <OptionsList
                 className="calculator__calculator-options"
                 options={CreditTargetNames}

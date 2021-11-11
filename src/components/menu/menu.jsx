@@ -38,7 +38,9 @@ const Menu = ({ className }) => {
                 </a>
             </span>
             <span className="menu__item menu__item--only-burger">
+                
                 {mobileMenuIsOpen && <SignIn className="main-nav__sign-in" />}
+                
             </span>
         </div>
     );

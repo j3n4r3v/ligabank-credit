@@ -7,7 +7,7 @@
   position: relative;
   min-height: 320px;
   margin: 0 auto;
-  padding: 53px 14px;
+  padding: 53px 21px 53px 14px;
 
   @media (min-width: $tablet-width) {
     padding: 55px 48px;
@@ -41,6 +41,10 @@
     min-width: auto;
     padding: 13px 29px;
   }
+}
+
+.tab-content__btn {
+  width: 290px;
 }
 
 .tab-content__title {
@@ -98,8 +102,8 @@
 
   @media (max-width: $mobile-width-only) {
     position: absolute;
-    right: 0;
-    top: 28%;
+    right: 2vw;;
+    top: 27%;
   }
 
   @media (min-width: $tablet-width) {

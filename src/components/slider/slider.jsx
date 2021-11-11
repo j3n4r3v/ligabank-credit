@@ -28,7 +28,7 @@ const Slider = ({ className, children }) => {
         <section className={`${className} slider`}>
             <div className="slider__img">
                     {children.map((name, i) =>
-                        <SwiperSlide key={i}>{name}</SwiperSlide>)}
+                        <SwiperSlide key={i+name}>{name}</SwiperSlide>)}
             </div>
         </section>
         </Swiper>

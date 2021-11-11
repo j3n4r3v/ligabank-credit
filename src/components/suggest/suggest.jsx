@@ -17,6 +17,7 @@ import { Button } from '../button/button';
 import './suggest.scss';
 
 const Suggest = ({ className, onClick }) => {
+
     const isAutoCredit = useSelector(state => state.option === CreditTarget.AUTO_CREDIT);
     const minCredit = isAutoCredit ? AutoCreditConsts.MIN_CREDIT : MortgageConsts.MIN_CREDIT;
     const minCost = isAutoCredit ? AutoCreditConsts.MIN_COST : MortgageConsts.MIN_COST;
@@ -71,13 +72,17 @@ const Suggest = ({ className, onClick }) => {
             <div className="suggest__wrapper">
                 <div className="suggest__top">
                     <p className="suggest__result">
+
                         {creditSum.toLocaleString()} рублей
+                        
                         <small className="suggest__desc">
                             Сумма {isAutoCredit ? 'автокредита' : 'ипотеки'}
                         </small>
                     </p>
                     <p className="suggest__result">
+
                         {getPercents()}%
+
                         <small className="suggest__desc">
                             Процентная ставка
                         </small>
@@ -85,13 +90,17 @@ const Suggest = ({ className, onClick }) => {
                 </div>
                 <div className="suggest__bottom">
                     <p className="suggest__result">
+
                         {getWordsLengthFromValue(getMonthlyPayment(), ['рубль', 'рубля', 'рублей'])}
+
                         <small className="suggest__desc">
                             Ежемесячный платеж
                         </small>
                     </p>
                     <p className="suggest__result">
+
                         {getWordsLengthFromValue(getRequiredIncome(), ['рубль', 'рубля', 'рублей'])}
+
                         <small className="suggest__desc">
                             Необходимый доход
                         </small>

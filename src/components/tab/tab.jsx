@@ -5,11 +5,13 @@ import './tab.scss';
 
 const Tab = ({ nameButton, className, children, onClick }) => {
     return (
-        <button onClick={(evt) => onClick(evt)}
+        <button
+            onClick={(evt) => onClick(evt)}
             className={`tab ${className}`}
             type="button">
-            {children}
             {nameButton}
+            {children}
+            
         </button>
     );
 };

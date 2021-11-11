@@ -78,6 +78,7 @@ const Summary = ({ className, onClick}) => {
             </ul>
             <Input
                 className={`summary__input ${error.name && 'input--error'}`}
+                id="identity"
                 onChange={(evt) => {
                     setError({ ...error, name: '' });
                     setUserData({ ...userData, name: evt.target.value });
@@ -92,6 +93,7 @@ const Summary = ({ className, onClick}) => {
 
                 <InputTel
                     className={`summary__input ${error.email && 'input--error'}`}
+                    id="tel"
                     onChange={(evt) => {
                         setError({ ...error, phone: '' });
                         setUserData({ ...userData, phone: evt.target.value });
@@ -103,6 +105,7 @@ const Summary = ({ className, onClick}) => {
 
                 <Input
                     className={`summary__input ${error.email && 'input--error'}`}
+                    id="email"
                     onChange={(evt) => {
                         setError({ ...error, email: '' });
                         setUserData({ ...userData, email: evt.target.value });

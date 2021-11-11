@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 import './input-checkbox.scss';
 
-const InputCheckbox = ({ className, value, label, onChange }) => {
+const InputCheckbox = ({ className, value, label, onChange, id }) => {
 
     return (
-        <label className={`${className} input-checkbox`}>
+        <label className={`${className} input-checkbox`} for={id}>
             <input
                 type="checkbox"
+                id={id}
                 onChange={(evt) => onChange(evt.target.checked)}
                 checked={value} />
             <span>

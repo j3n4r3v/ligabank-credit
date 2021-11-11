@@ -4,7 +4,7 @@ import { InputFormat } from '../input-format/input-format';
 
 import './range.scss';
 
-const Range = ({className, label, desc, value, max, min, step, range, onChangeInput, onChangeRange, ...rest}) => {
+const Range = ({className, label, desc, value, max, min, step, range, onChangeInput, onChangeRange, id, ...rest}) => {
 
     return (
         <div className={`${className} range`}>
@@ -14,11 +14,13 @@ const Range = ({className, label, desc, value, max, min, step, range, onChangeIn
                 onChangeValue={(value) => onChangeInput(value)}
                 label={label}
                 value={value}
+                id={id}
                 {...rest}
             />
 
             <input
                 className="range__slider"
+                id={id}
                 onChange={(evt) => onChangeRange(evt)}
                 type="range"
                 step={step}

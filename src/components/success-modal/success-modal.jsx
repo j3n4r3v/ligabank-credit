@@ -5,17 +5,19 @@ import { Modal } from '../modal/modal';
 
 import './success-modal.scss';
 
-const SuccessModal = ({ className, changeVisibilitySuccess }) => {
+const SuccessModal = ({ className, onChangeVisibleSuccess }) => {
     return (
-        <Modal closeModal={() => changeVisibilitySuccess(false)}>
+        <Modal handleCloseModal={() => onChangeVisibleSuccess(false)}>
+
             <InfoSuccess className={className} />
+            
         </Modal>
     );
 };
 
 SuccessModal.propTypes = {
     className: PropTypes.string.isRequired,
-    changeVisibilitySuccess: PropTypes.func.isRequired
+    onChangeVisibleSuccess: PropTypes.func.isRequired
 };
 
 export { SuccessModal };

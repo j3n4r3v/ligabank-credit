@@ -6,7 +6,7 @@ import { CloseButton } from '../close-button/close-button';
 
 import './modal.scss';
 
-const Modal = ({ children, closeModal }) => {
+const Modal = ({ children, handleCloseModal }) => {
 
     const overlayRef = useRef();
 
@@ -21,33 +21,35 @@ const Modal = ({ children, closeModal }) => {
     });
 
     const onCloseModalButtonClick = () => {
-        closeModal();
+        handleCloseModal();
     };
 
     const onEscClick = (event) => {
         if (event.keyCode === ESC_CODE) {
-            closeModal();
+            handleCloseModal();
         }
     };
 
     const onOverlayClick = (evt) => {
-        evt.target === overlayRef.current && closeModal();
+        evt.target === overlayRef.current && handleCloseModal();
     };
 
     return (
         <div className="overlay" ref={overlayRef}
             onClick={(evt) => onOverlayClick(evt)}>
             <div className="modal">
-                <CloseButton className="modal-login__close"
-                    onClick={() => onCloseModalButtonClick()} />
-                {children}
+
+                <CloseButton
+                 className="modal-login__close"
+                 onClick={() => onCloseModalButtonClick()} />
+                    {children}
             </div>
         </div>
     );
 };
 
 Modal.propTypes = {
-    closeModal: PropTypes.func.isRequired,
+    handleCloseModal: PropTypes.func.isRequired,
     children: PropTypes.object.isRequired
 };
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({ desc, label, className, type, ...props}) => {
+const Input = ({ desc, label, className, type, id }) => {
     return (
-        <label className={`${className} input`}>
+        <label className={`${className} input`} for={id}>
             <span className="input__label">
                 {label}
             </span>
-            <input {...props} className="input__text" type={type || 'number'} />
+            <input className="input__text" type={type || 'number'} id={id} />
             <span className="input__desc">
                 {desc}
             </span>

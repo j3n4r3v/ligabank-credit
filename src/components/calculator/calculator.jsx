@@ -75,7 +75,7 @@ const Calculator = ({ className }) => {
             {successIsOpen &&
                 <SuccessModal
                     className="calculator__success"
-                    changeVisibilitySuccess={(value) => setSuccessIsOpen(value)}
+                    onChangeVisibleSuccess={(value) => setSuccessIsOpen(value)}
                 />}
 
         </section>

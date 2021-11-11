@@ -36,12 +36,14 @@ const Tabs = ({ className }) => {
             <h2 className="visually-hidden">Наши предложения</h2>
             <div className="tabs__wrapper">
                 {tabOrder.map((tab, i) =>
+
                     <Tab key={tab + i}
                         onClick={() => setActiveTab(tab)}
                         className={`tabs__btn ${activeTab === tab && 'tab--active'}`}
                         nameButton={TabNames[tab]}>
                         {tabImages[tab]}
                     </Tab>
+                    
                 )}
             </div>
             <div className="tabs__content" >

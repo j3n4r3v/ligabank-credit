@@ -1,35 +1,35 @@
-export const ESC_CODE = 27;
-export const SLIDER_TIMEOUT = 4000;
-export const PASSWORD_LENGTH = 8;
-export const STEP_FEE = 5;
-export const MOUNTS_IN_YEAR = 12;
-export const PART_PAYMENT_OF_INCOME = 45;
+const ESC_CODE = 27;
+const SLIDER_TIMEOUT = 4000000;
+const PASSWORD_LENGTH = 8;
+const STEP_FEE = 5;
+const MOUNTS_IN_YEAR = 12;
+const PART_PAYMENT_OF_INCOME = 45;
 
-export const Tabs = {
+const Tabs = {
     DEPOSITS: 'DEPOSITS',
     CREDITS: 'CREDITS',
     INSURANCE: 'INSURANCE',
     ONLINE_SERVICES: 'ONLINE_SERVICES'
 };
 
-export const TabNames = {
+const TabNames = {
     DEPOSITS: 'Вклады',
     CREDITS: 'Кредиты',
     INSURANCE: 'Страхование',
     ONLINE_SERVICES: 'Онлайн-сервисы'
 };
 
-export const CreditTarget = {
+const CreditTarget = {
     MORTGAGE: 'MORTGAGE',
     AUTO_CREDIT: 'AUTO_CREDIT'
 };
 
-export const CreditTargetNames = {
+const CreditTargetNames = {
     MORTGAGE: 'Ипотечное кредитование',
     AUTO_CREDIT: 'Автомобильное кредитование'
 };
 
-export const MortgageConsts = {
+const MortgageConsts = {
     MIN_COST: 1200000,
     MAX_COST: 25000000,
     STEP_COST: 100000,
@@ -44,7 +44,7 @@ export const MortgageConsts = {
     PERCENT_FEE_OF_COST_BORDER: 15
 };
 
-export const AutoCreditConsts = {
+const AutoCreditConsts = {
     MIN_COST: 500000,
     MAX_COST: 5000000,
     STEP_COST: 50000,
@@ -59,3 +59,6 @@ export const AutoCreditConsts = {
     MIN_INTEREST_RATE_ALL_ADD: 3.5,
     MONEY_BORDER: 2000000
 };
+
+export { ESC_CODE, SLIDER_TIMEOUT, PASSWORD_LENGTH, STEP_FEE, MOUNTS_IN_YEAR, PART_PAYMENT_OF_INCOME,
+     Tabs, TabNames, CreditTarget, CreditTargetNames, MortgageConsts, AutoCreditConsts };
