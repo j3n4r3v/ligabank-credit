@@ -6,7 +6,7 @@ import { CloseButton } from '../close-button/close-button';
 
 import './modal.scss';
 
-const Modal = ({ children, handleCloseModal }) => {
+const Modal = ({ children, handleCloseModal, ...props }) => {
 
     const overlayRef = useRef();
 
@@ -41,7 +41,9 @@ const Modal = ({ children, handleCloseModal }) => {
 
                 <CloseButton
                  className="modal-login__close"
-                 onClick={() => onCloseModalButtonClick()} />
+                 onClick={() => onCloseModalButtonClick()}
+                 {...props} 
+                />
                     {children}
             </div>
         </div>

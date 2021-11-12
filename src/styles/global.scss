@@ -8,9 +8,19 @@ body {
   font-weight: 400;
   color: $color-service;
   background-color: $color-background;
-
+  height: 100vh;
   overflow: auto;
 
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.credit {
+  flex: 1 0 auto;
 }
 
 main,

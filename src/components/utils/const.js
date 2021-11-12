@@ -1,5 +1,5 @@
 const ESC_CODE = 27;
-const SLIDER_TIMEOUT = 4000000;
+const SLIDER_TIMEOUT = 4000;
 const PASSWORD_LENGTH = 8;
 const STEP_FEE = 5;
 const MOUNTS_IN_YEAR = 12;

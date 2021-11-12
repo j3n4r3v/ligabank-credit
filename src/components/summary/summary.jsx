@@ -34,13 +34,13 @@ const Summary = ({ className, onClick}) => {
     const validateField = (fieldName, value) => {
         switch (fieldName) {
             case 'email':
-                return value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+                return value && value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
                     ? '' : 'Email введен некорректно';
             case 'phone':
-                return value.match(/(\+7|8)\d{3}-\d{3}-\d{2}-\d{2}/i)
+                return value && value.match(/(\+7|8)\d{3}-\d{3}-\d{2}-\d{2}/i)
                     ? '' : 'Телефон введен некорректно';
             case 'name':
-                return value.length > 8
+                return value && value.length > 8
                     ? '' : 'ФИО не заполнено';
             default:
                 break;
