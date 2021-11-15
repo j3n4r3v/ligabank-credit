@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import {Preview} from "../preview/preview";
 import firstSlide from './1-desktop.png';
 
+import './first-slide.scss'
+
 const FirstSlide = ({ className }) => (
     <Preview className={`${className} preview--first`}
         title="Лига Банк"

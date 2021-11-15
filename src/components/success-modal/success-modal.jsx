@@ -7,12 +7,17 @@ import { CloseButton } from '../close-button/close-button';
 import './success-modal.scss';
 
 const SuccessModal = ({ className, onChangeVisibleSuccess }) => {
+
+    const hundleChangeVisibleSuccess = () => {
+        onChangeVisibleSuccess();
+    };
+
     return (
-        <Modal onClickCloseModal={() => onChangeVisibleSuccess(false)}>
+        <Modal onClickCloseModal={() => hundleChangeVisibleSuccess(false)}>
             
             <CloseButton
                     className="close-button"
-                    onClick={() => onChangeVisibleSuccess()}
+                    onClick={() => hundleChangeVisibleSuccess()}
             />
 
             <InfoSuccess className={className} />

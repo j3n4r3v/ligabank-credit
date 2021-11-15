@@ -11,7 +11,7 @@ import './calculator-select.scss';
 const CalculatorSelect = ({ className }) => {
     const dispatch = useDispatch();
 
-    const onChangeTarget = (value) => {
+    const hundleChangeTarget = (value) => {
         dispatch(changeOption(value));
     };
 
@@ -23,7 +23,7 @@ const CalculatorSelect = ({ className }) => {
                 className="calculator__calculator-options"
                 options={CreditTargetName}
                 title={'Выберите цель кредита'}
-                onChange={(value) => onChangeTarget(value)}
+                onChange={(value) => hundleChangeTarget(value)}
             />
         </section>
     );

@@ -7,16 +7,14 @@ import secondSlide from './2-desktop.png';
 import './second-slide.scss';
 
 const SecondSlide = ({ className }) => (
-    <Preview className={`${className} preview--second`}
+    <Preview 
+        className={`${className} preview--second`}
         title="Лига Банк"
-        subtitle="Кредиты на любой случай"
-        isLight={true}
-        button={{
-            title: 'Рассчитать кредит',
-            href: '#calculator',
-        }}
+        key="second"
+        subtitle="Ваша уверенность в&nbsp;завтрашнем дне"
+        isLight={false}
         img={{
-            alt: 'Пример белой карты клиента нашего банка',
+            alt: 'Клиент нашего банка',
             src: secondSlide
         }} />
 );

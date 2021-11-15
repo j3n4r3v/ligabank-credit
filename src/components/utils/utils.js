@@ -1,11 +1,10 @@
-
 const MIN_WORD_LENGTH = 1;
 const MIDDLE_WORD_LENGTH = 5;
 const MAX_WORD_LENGTH = 21;
-
 const MIN_INDEX = 0;
 const MIDDLE_INDEX = 1;
 const MAX_INDEX = 2;
+const MAX_PERCENT = 100;
 
 const range = (count) => {
     return [...Array(count).keys()];
@@ -35,9 +34,9 @@ const getValidValue = (value, min, max) => {
     return validValue;
 };
 
-const getPercentOfCost = (value, cost) => Math.ceil((value / cost) * 100);
+const getPercentOfCost = (value, cost) => Math.ceil((value / cost) * MAX_PERCENT);
 
-const getCostOfPercent = (percent, cost) => Math.ceil(cost * (percent / 100));
+const getCostOfPercent = (percent, cost) => Math.ceil(cost * (percent / MAX_PERCENT));
 
 
 export {range, getWordsLength, getWordsLengthFromValue, getValidValue, getPercentOfCost,  getCostOfPercent}

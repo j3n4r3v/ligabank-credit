@@ -19,7 +19,7 @@ const Tabs = ({ className }) => {
 
     const tabOrders = [...Object.keys(TabTitle)];
 
-    const tabImage = {
+    const tabImages = {
         DEPOSIT: <DepositIcon />,
         CREDIT: <CreditIcon />,
         INSURANCE: <InsuranceIcon />,
@@ -27,12 +27,12 @@ const Tabs = ({ className }) => {
 
     };
 
-    const onTabClick = () => {
+    const hundleTabClick = () => {
         setActiveTab(tabOrders[(tabOrders.indexOf(activeTab) + 1) % tabOrders.length]);
     };
 
     return (
-        <section className={`tabs ${className}`} onTouchMove={onTabClick}>
+        <section className={`tabs ${className}`} onTouchMove={hundleTabClick}>
             <h2 className="visually-hidden">Наши предложения</h2>
             <div className="tabs__wrapper">
                 {tabOrders.map((tab, i) =>
@@ -41,7 +41,7 @@ const Tabs = ({ className }) => {
                         onClick={() => setActiveTab(tab)}
                         className={`tabs__btn ${activeTab === tab && 'tab--active'}`}
                         nameButton={TabName[tab]}>
-                        {tabImage[tab]}
+                        {tabImages[tab]}
                     </Tab>
                     
                 )}

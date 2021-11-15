@@ -10,14 +10,14 @@ const Burger = ({ className }) => {
     const dispatch = useDispatch();
     const mobileMenuIsOpen = useSelector(state => state.mobileMenuIsOpen);
 
-    const onClickBurger = () => {
+    const handleClickBurger = () => {
         dispatch(changeVisibleMenu(!mobileMenuIsOpen));
     };
 
     return (
         <button 
             className={`${className} burger`}
-            onClick={() => onClickBurger()}
+            onClick={() => handleClickBurger()}
             type="button"
             name="open or closed mobile menu">
                 <span className="visually-hidden">

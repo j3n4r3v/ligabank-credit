@@ -11,27 +11,28 @@ const Modal = ({children, onClickCloseModal}) => {
 
     useEffect(() => {
         const preventWheelScroll = (evt) => evt.preventDefault();
-            document.addEventListener('keydown', onEscClick);
+            document.addEventListener('keydown', hundleEscClick);
             window.addEventListener('wheel', preventWheelScroll, { passive: false });
         return () => {
-            document.removeEventListener('keydown', onEscClick);
+            document.removeEventListener('keydown', hundleEscClick);
             window.removeEventListener('wheel', preventWheelScroll);
         };
     });
 
-    const onEscClick = (event) => {
+    const hundleEscClick = (event) => {
         if (event.keyCode === ESC_CODE) {
             onClickCloseModal();
         }
     };
 
-    const onOverlayClick = (evt) => {
+    const hundleOverlayClick = (evt) => {
         evt.target === overlayRef.current && onClickCloseModal();
     };
 
+    console.log(children);
     return (
         <div className="overlay" ref={overlayRef}
-            onClick={(evt) => onOverlayClick(evt)}>
+            onClick={(evt) => hundleOverlayClick(evt)}>
             <div className="modal">
 
                     {children}
@@ -43,7 +44,7 @@ const Modal = ({children, onClickCloseModal}) => {
 
 Modal.propTypes = {
     onClickCloseModal: PropTypes.func.isRequired,
-    children: PropTypes.any
+    children: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
 };
 
 export { Modal };

@@ -12,7 +12,6 @@ import './pagination.scss';
 SwiperCore.use([Autoplay, Pagination]);
 
 const Slider = ({ className, children }) => {
-
     return (
 
         <Swiper

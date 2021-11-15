@@ -48,7 +48,7 @@ const ModalLogin = ({onClickCloseModal}) => {
 
     }, [firstFocusableElement, lastFocusableElement])
   
-    const onSubmitLoginModal = (evt) => {
+    const hundleSubmitLoginModal = (evt) => {
         evt.preventDefault();
         const isEmailInvalid = validateField('email', email);
         setErrorEmail(isEmailInvalid);
@@ -58,11 +58,11 @@ const ModalLogin = ({onClickCloseModal}) => {
         if (!isEmailInvalid && !isPasswordInvalid) {
             saveLoginToLocalStorage({ email, password });
             dispatch(login(email, password));
-            onCloseForm();
+            hundleClosePopup();
         }
     };
 
-    const onCloseForm = () => {
+    const hundleClosePopup = () => {
         setErrorEmail('');
         setErrorPassword('');
         setEmail('');
@@ -92,9 +92,9 @@ const ModalLogin = ({onClickCloseModal}) => {
 
     return (
 
-        <Modal onClickCloseModal={() => onCloseForm()}>
+        <Modal onClickCloseModal={() => hundleClosePopup()}>
 
-            <form className="modal-login" onSubmit={(evt) => onSubmitLoginModal(evt)}>
+            <form className="modal-login" onSubmit={(evt) => hundleSubmitLoginModal(evt)}>
                 <h2 className="visually-hidden">Введите e-mail и пароль</h2>
                 <div className="modal-login__wrapper">
 
@@ -102,12 +102,13 @@ const ModalLogin = ({onClickCloseModal}) => {
 
                     <button 
                         className= "modal-login__close close-button"
-                        onClick={() => onCloseForm()}
+                        onClick={() => hundleClosePopup()}
                         type="button"
                         name="close button"
                         tabIndex="0"
                         ref={firstFocusableElement}
-                            >Закрыть</button>
+                            >Закрыть
+                    </button>
 
                     <Logo className="modal-login__logo" />
 

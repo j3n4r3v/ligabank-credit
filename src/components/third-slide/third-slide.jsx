@@ -7,16 +7,18 @@ import thirdSlide from "./3-desktop.png";
 import './third-slide.scss';
 
 const ThirdSlide = ({ className }) => (
-    <Preview className={`${className} preview--third`}
+    <Preview
+         className={`${className} preview--third`}
         title="Лига Банк"
-        subtitle="Кредиты на любой случай"
-        isLight={true}
+        key="third"
+        subtitle="Всегда рядом"
+        isLight={false}
         button={{
-            title: 'Рассчитать кредит',
-            href: '#calculator',
+            title: 'Найти отделение',
+            href: '#map'
         }}
         img={{
-            alt: 'Пример белой карты клиента нашего банка',
+            alt: 'Клиент нашего банка',
             src: thirdSlide
         }} />
 );

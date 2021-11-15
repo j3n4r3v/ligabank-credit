@@ -9,6 +9,7 @@ const initialState = {
 };
 
 const ActionCreator = {
+    
     changeVisibleMenu: (payload) => ({
         type: Actions.CHANGE_VISIBLE_MENU,
         payload: payload

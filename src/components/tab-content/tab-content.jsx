@@ -127,7 +127,7 @@ TabContent.propTypes = {
     list: PropTypes.arrayOf(PropTypes.string),
     button: PropTypes.shape({ title: PropTypes.string, href: PropTypes.string }),
     img: PropTypes.shape({ alt: PropTypes.string, src: PropTypes.string }),
-    desc: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    desc: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
 };
 
 Deposit.propTypes = {

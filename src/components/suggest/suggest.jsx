@@ -18,6 +18,10 @@ import './suggest.scss';
 
 const Suggest = ({ className, onClick }) => {
 
+    const hundleClick = () => {
+        onClick();
+    }
+
     const isAutoCredit = useSelector(state => state.option === CreditTarget.AUTO_CREDIT);
     const minCredit = isAutoCredit ? AutoCreditConst.MIN_CREDIT : MortgageConst.MIN_CREDIT;
     const minCost = isAutoCredit ? AutoCreditConst.MIN_COST : MortgageConst.MIN_COST;
@@ -107,7 +111,7 @@ const Suggest = ({ className, onClick }) => {
             <Button
                 className="suggest__button"
                 nameButton="Оформить заявку"
-                onClick={() => onClick()}
+                onClick={() => hundleClick()}
                 name="make a request"
             />
         </section>
@@ -116,6 +120,7 @@ const Suggest = ({ className, onClick }) => {
 
 Suggest.propTypes = {
     className: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired
 };
 
 export { Suggest };

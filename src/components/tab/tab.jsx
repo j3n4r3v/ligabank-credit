@@ -4,9 +4,14 @@ import PropTypes from 'prop-types';
 import './tab.scss';
 
 const Tab = ({ nameButton, className, children, onClick }) => {
+
+    const hundleClick =() => {
+        onClick ();
+    }
+
     return (
         <button
-            onClick={(evt) => onClick(evt)}
+            onClick={(evt) => hundleClick(evt)}
             className={`tab ${className}`}
             type="button"
             name="tab name">

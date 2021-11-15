@@ -16,7 +16,7 @@ const SignIn = ({ className }) => {
     const email = useSelector(state => state.email);
     const isLogin = useSelector(state => state.isLogin);
 
-    const onSignInClick = () => {
+    const hundleSignInClick = () => {
         if (isLogin) {
             saveStatusisLoginToLocalStorage(false);
             dispatch(logout());
@@ -29,7 +29,7 @@ const SignIn = ({ className }) => {
 
     return (
         <div className={`${className} sign-in ${mobileMenuIsOpen ? 'sign-in__mobile--burger' : ''} `}>
-            <button type="button" className="sign-in__button" name="sign in" onClick={() => onSignInClick()}>
+            <button type="button" className="sign-in__button" name="sign in" onClick={() => hundleSignInClick()}>
 
                 <SignInImg />
 

@@ -13,12 +13,18 @@ import './summary.scss';
 
 const Summary = ({ className, onClick}) => {
 
+    const fieldNameLength = 8;
+
     const data = useSelector(state => state.data);
     const isAutoCredit = data && data.option === CreditTarget.AUTO_CREDIT;
     const [userData, setUserData] = useState({ name: data.name, phone: data.phone, email: data.email });
     const [error, setError] = useState({});
 
-    const onSubmitClick = () => {
+    const hundleClick = (pam) => {
+        onClick(pam);
+    }
+
+    const hundleSubmitClick = () => {
         const phoneInvalid = validateField('phone', userData.phone);    
         setError((prevError) => ({ ...prevError, phone: phoneInvalid }));
         const nameInvalid = validateField('name', userData.name);
@@ -27,23 +33,29 @@ const Summary = ({ className, onClick}) => {
         setError((prevError) => ({ ...prevError, email: emailInvalid }));
         if (!emailInvalid && !phoneInvalid && !nameInvalid) {
             setError({});
-            onClick(userData);
+            hundleClick(userData);
         }
     };
 
     const validateField = (fieldName, value) => {
+
         switch (fieldName) {
-            case 'email':
+
+            case 'email': {
                 return value && value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
-                    ? '' : 'Email введен некорректно';
-            case 'phone':
+                    ? '' : 'Email введен некорректно'
+                }
+            case 'phone': {
                 return value && value.match(/(\+7|8)\d{3}-\d{3}-\d{2}-\d{2}/i)
-                    ? '' : 'Телефон введен некорректно';
-            case 'name':
-                return value && value.length > 8
-                    ? '' : 'ФИО не заполнено';
-            default:
-                break;
+                    ? '' : 'Телефон введен некорректно'
+                }
+            case 'name': {
+                return value && value.length > fieldNameLength
+                    ? '' : 'ФИО не заполнено'
+                }
+            default: {
+                break
+            }
         }
     };
 
@@ -124,7 +136,7 @@ const Summary = ({ className, onClick}) => {
             <Button
                 className="summary__submit"
                 nameButton="Отправить"
-                onClick={() => onSubmitClick()}
+                onClick={() => hundleSubmitClick()}
                 name="submit summary info by credit"
             />
 
@@ -134,6 +146,7 @@ const Summary = ({ className, onClick}) => {
 
 Summary.propTypes = {
     className: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired
 
 };
 
