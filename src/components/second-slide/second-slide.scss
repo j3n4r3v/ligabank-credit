@@ -1,3 +1,15 @@
+@import "../../styles/colors";
+@import "../../styles/const-width";
+
 .preview--second {
+    background: $color-service--lightest;
+    width: 100%;
     background: linear-gradient(135deg, #d9dee8, #f6fbff);
+  }
+
+  .preview--second .preview__img {
+    @media (max-width: $mobile-width-only) {
+      object-position: 62% 0;
+      height: 250px;
+    }
   }

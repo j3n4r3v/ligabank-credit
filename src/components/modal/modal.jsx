@@ -29,7 +29,6 @@ const Modal = ({children, onClickCloseModal}) => {
         evt.target === overlayRef.current && onClickCloseModal();
     };
 
-    console.log(children);
     return (
         <div className="overlay" ref={overlayRef}
             onClick={(evt) => hundleOverlayClick(evt)}>

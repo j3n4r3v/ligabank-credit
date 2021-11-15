@@ -14,13 +14,6 @@
     background: linear-gradient(to bottom, $color-main 32%, $color-main--dark 99.79%);
   }
 
-  &--man {
-    background: linear-gradient(135deg, #d9dee8, #f6fbff);
-  }
-
-  &--woman {
-    background: #e5f1fd;
-  }
 }
 
 .preview__wrapper {
@@ -35,7 +28,7 @@
 
   @media (min-width: $desktop-width) {
     min-height: 400px;
-    max-width: 1366px;
+    max-width: 1364px;
     min-width: $desktop-width;
   }
 }
@@ -148,16 +141,3 @@
   }
 }
 
-.preview--man .preview__img {
-  @media (max-width: $mobile-width-only) {
-    object-position: 62% 0;
-    height: 250px;
-  }
-}
-
-.preview--woman .preview__img {
-  @media (max-width: $mobile-width-only) {
-    object-position: 62% 0;
-    height: 250px;
-  }
-}
