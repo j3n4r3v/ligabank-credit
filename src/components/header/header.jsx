@@ -1,7 +1,11 @@
 import React from 'react';
 
 import { MainNav } from '../main-nav/main-nav';
-import { FirstSlide, SecondSlide, ThirdSlide } from '../preview/preview';
+
+import {FirstSlide} from '../first-slide/first-slide';
+import {SecondSlide} from '../second-slide/second-slide';
+import {ThirdSlide } from '../third-slide/third-slide';
+
 import { Slider } from '../slider/slider';
 
 import './header.scss';

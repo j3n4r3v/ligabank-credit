@@ -27,6 +27,7 @@ const Range = ({className, label, desc, value, max, min, step, range, onChangeIn
                 value={range}
                 max={max}
                 min={min}
+                name ="range-slider"
             />
 
             <span className="range__desc">

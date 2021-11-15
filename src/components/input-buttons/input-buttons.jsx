@@ -14,12 +14,15 @@ const InputButtons = ({ className, onChange, step, value, id, ...rest }) => {
 
     const onValueChange = (target) => {
         switch (target) {
-            case NamesButton.MINUS:
-                return onChange(value - step);
-            case NamesButton.PLUS:
-                return onChange(value + step);
-            default:
+            case NamesButton.MINUS: {
+                return onChange(value - step) 
+            };
+            case NamesButton.PLUS: {
+                return onChange(value + step)
+            };
+            default: {
                 return onChange(target);
+            };
         }
     };
 

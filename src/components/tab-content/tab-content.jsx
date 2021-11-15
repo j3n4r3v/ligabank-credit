@@ -55,7 +55,7 @@ const TabContent = ({ className, title, list, button, img, desc }) => {
     );
 };
 
-const Deposits = ({ className }) => (
+const Deposit = ({ className }) => (
     <TabContent
         className={className}
         title="Вклады Лига Банка – это выгодная инвестиция в свое будущее"
@@ -72,7 +72,7 @@ const Deposits = ({ className }) => (
         }} />
 );
 
-const Credits = ({ className }) => (
+const Credit = ({ className }) => (
     <TabContent
         className={className}
         title="Лига Банк выдает кредиты под любые цели"
@@ -104,7 +104,7 @@ const Insurance = ({ className }) => (
         }} />
 );
 
-const Services = ({ className }) => (
+const Service = ({ className }) => (
     <TabContent
         className={className}
         title="Лига Банк — это огромное количество онлайн-сервисов для вашего удобства"
@@ -130,11 +130,11 @@ TabContent.propTypes = {
     desc: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
-Deposits.propTypes = {
+Deposit.propTypes = {
     className: PropTypes.string.isRequired
 };
 
-Services.propTypes = {
+Service.propTypes = {
     className: PropTypes.string.isRequired
 };
 
@@ -142,8 +142,8 @@ Insurance.propTypes = {
     className: PropTypes.string.isRequired
 };
 
-Credits.propTypes = {
+Credit.propTypes = {
     className: PropTypes.string.isRequired
 };
 
-export { Deposits, Credits, Insurance, Services };
+export { Deposit, Credit, Insurance, Service };

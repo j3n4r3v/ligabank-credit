@@ -15,12 +15,14 @@ const Burger = ({ className }) => {
     };
 
     return (
-        <button className={`${className} burger`}
-         onClick={() => onClickBurger()}
-          type="button" name="open or closed mobile menu">
-            <span className="visually-hidden">
-                Меню
-            </span>
+        <button 
+            className={`${className} burger`}
+            onClick={() => onClickBurger()}
+            type="button"
+            name="open or closed mobile menu">
+                <span className="visually-hidden">
+                    Меню
+                </span>
         </button>
     );
 };

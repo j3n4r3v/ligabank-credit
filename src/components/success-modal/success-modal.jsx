@@ -1,13 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { InfoSuccess } from '../info-block/info-block';
-import { Modal } from '../modal/modal';
+import { Modal} from '../modal/modal';
+import { CloseButton } from '../close-button/close-button';
 
 import './success-modal.scss';
 
 const SuccessModal = ({ className, onChangeVisibleSuccess }) => {
     return (
-        <Modal handleCloseModal={() => onChangeVisibleSuccess(false)}>
+        <Modal onClickCloseModal={() => onChangeVisibleSuccess(false)}>
+            
+            <CloseButton
+                    className="close-button"
+                    onClick={() => onChangeVisibleSuccess()}
+            />
 
             <InfoSuccess className={className} />
             

@@ -87,6 +87,7 @@ const Summary = ({ className, onClick}) => {
                 defaultValue={userData.name}
                 desc={error.name}
                 placeholder="ФИО"
+                name = "identity-input"
                 type="string"
             />
             <div className="summary__group">
@@ -100,6 +101,7 @@ const Summary = ({ className, onClick}) => {
                     }}
                     value={userData.phone}
                     desc={error.phone}
+                    name = "tel-input"
                     placeholder="Телефон"
                 />
 
@@ -114,6 +116,7 @@ const Summary = ({ className, onClick}) => {
                     desc={error.email}
                     placeholder="E-mail"
                     type="email"
+                    name ="email-input"
                 />
 
             </div>

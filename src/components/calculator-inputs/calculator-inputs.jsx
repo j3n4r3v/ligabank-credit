@@ -6,7 +6,7 @@ import { InputCheckbox } from '../input-checkbox/input-checkbox';
 import { InputButtons } from '../input-buttons/input-buttons';
 import { Range } from '../range/range';
 
-import { AutoCreditConsts, CreditTarget, MortgageConsts, STEP_FEE } from '../utils/const';
+import { AutoCreditConst, CreditTarget, MortgageConst, STEP_FEE } from '../utils/const';
 import { getCostOfPercent, getPercentOfCost, getValidValue, getWordsLength, getWordsLengthFromValue } from '../utils/utils';
 
 import {
@@ -26,27 +26,24 @@ const CalculatorInputs = ({ className }) => {
     const useKacko = useSelector(state => state.useKacko);
     const useLifeInsurance = useSelector(state => state.useLifeInsurance);
     const isAutoCredit = useSelector(state => state.option === CreditTarget.AUTO_CREDIT);
-    const minCost = isAutoCredit ? AutoCreditConsts.MIN_COST : MortgageConsts.MIN_COST;
-    const maxCost = isAutoCredit ? AutoCreditConsts.MAX_COST : MortgageConsts.MAX_COST;
-    const minFee = isAutoCredit ? AutoCreditConsts.MIN_FEE : MortgageConsts.MIN_FEE;
-    const maxFee = isAutoCredit ? AutoCreditConsts.MAX_FEE : MortgageConsts.MAX_FEE;
-    const minPeriod = isAutoCredit ? AutoCreditConsts.MIN_PERIOD : MortgageConsts.MIN_PERIOD;
-    const maxPeriod = isAutoCredit ? AutoCreditConsts.MAX_PERIOD : MortgageConsts.MAX_PERIOD;
-    const stepCost = isAutoCredit ? AutoCreditConsts.STEP_COST : MortgageConsts.STEP_COST;
-    const minCredit = isAutoCredit ? AutoCreditConsts.MIN_CREDIT : MortgageConsts.MIN_CREDIT;
+    const minCost = isAutoCredit ? AutoCreditConst.MIN_COST : MortgageConst.MIN_COST;
+    const maxCost = isAutoCredit ? AutoCreditConst.MAX_COST : MortgageConst.MAX_COST;
+    const minFee = isAutoCredit ? AutoCreditConst.MIN_FEE : MortgageConst.MIN_FEE;
+    const maxFee = isAutoCredit ? AutoCreditConst.MAX_FEE : MortgageConst.MAX_FEE;
+    const minPeriod = isAutoCredit ? AutoCreditConst.MIN_PERIOD : MortgageConst.MIN_PERIOD;
+    const maxPeriod = isAutoCredit ? AutoCreditConst.MAX_PERIOD : MortgageConst.MAX_PERIOD;
+    const stepCost = isAutoCredit ? AutoCreditConst.STEP_COST : MortgageConst.STEP_COST;
+    const minCredit = isAutoCredit ? AutoCreditConst.MIN_CREDIT : MortgageConst.MIN_CREDIT;
 
-    const maxFeeCost = cost - minCredit - MortgageConsts.PARENT_CAPITAL *
+    const maxFeeCost = cost - minCredit - MortgageConst.PARENT_CAPITAL *
         (useMotherCapital && !isAutoCredit);
 
     const [percent, setPercent] = useState(minFee);
     const [errorCost, setErrorCost] = useState(false);
 
     const onCostValidate = (value) => {
-        if (!isFinite(Number.parseFloat(value)) || value < minCost || value > maxCost) {
-            setErrorCost(true);
-        } else {
-            setErrorCost(false);
-        }
+        !isFinite(Number.parseFloat(value)) || value < minCost || value > maxCost ?
+            setErrorCost(true) : setErrorCost(false);
     };
 
     const onCostChange = (value) => {

@@ -5,18 +5,18 @@ const STEP_FEE = 5;
 const MOUNTS_IN_YEAR = 12;
 const PART_PAYMENT_OF_INCOME = 45;
 
-const Tabs = {
-    DEPOSITS: 'DEPOSITS',
-    CREDITS: 'CREDITS',
+const TabEnum = {
+    DEPOSIT: 'DEPOSIT',
+    CREDIT: 'CREDIT',
     INSURANCE: 'INSURANCE',
-    ONLINE_SERVICES: 'ONLINE_SERVICES'
+    SERVICE: 'SERVICE'
 };
 
-const TabNames = {
-    DEPOSITS: 'Вклады',
-    CREDITS: 'Кредиты',
+const TabName = {
+    DEPOSIT: 'Вклады',
+    CREDIT: 'Кредиты',
     INSURANCE: 'Страхование',
-    ONLINE_SERVICES: 'Онлайн-сервисы'
+    SERVICE: 'Онлайн-сервисы'
 };
 
 const CreditTarget = {
@@ -24,12 +24,12 @@ const CreditTarget = {
     AUTO_CREDIT: 'AUTO_CREDIT'
 };
 
-const CreditTargetNames = {
+const CreditTargetName = {
     MORTGAGE: 'Ипотечное кредитование',
     AUTO_CREDIT: 'Автомобильное кредитование'
 };
 
-const MortgageConsts = {
+const MortgageConst = {
     MIN_COST: 1200000,
     MAX_COST: 25000000,
     STEP_COST: 100000,
@@ -44,7 +44,7 @@ const MortgageConsts = {
     PERCENT_FEE_OF_COST_BORDER: 15
 };
 
-const AutoCreditConsts = {
+const AutoCreditConst = {
     MIN_COST: 500000,
     MAX_COST: 5000000,
     STEP_COST: 50000,
@@ -61,4 +61,4 @@ const AutoCreditConsts = {
 };
 
 export { ESC_CODE, SLIDER_TIMEOUT, PASSWORD_LENGTH, STEP_FEE, MOUNTS_IN_YEAR, PART_PAYMENT_OF_INCOME,
-     Tabs, TabNames, CreditTarget, CreditTargetNames, MortgageConsts, AutoCreditConsts };
+     TabEnum, TabName, CreditTarget, CreditTargetName, MortgageConst, AutoCreditConst };

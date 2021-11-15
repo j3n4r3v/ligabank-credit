@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
 import {
-    AutoCreditConsts,
+    AutoCreditConst,
     CreditTarget,
-    MortgageConsts,
+    MortgageConst,
     MOUNTS_IN_YEAR,
     PART_PAYMENT_OF_INCOME
 } from '../utils/const';
@@ -19,39 +19,36 @@ import './suggest.scss';
 const Suggest = ({ className, onClick }) => {
 
     const isAutoCredit = useSelector(state => state.option === CreditTarget.AUTO_CREDIT);
-    const minCredit = isAutoCredit ? AutoCreditConsts.MIN_CREDIT : MortgageConsts.MIN_CREDIT;
-    const minCost = isAutoCredit ? AutoCreditConsts.MIN_COST : MortgageConsts.MIN_COST;
-    const maxCost = isAutoCredit ? AutoCreditConsts.MAX_COST : MortgageConsts.MAX_COST;
+    const minCredit = isAutoCredit ? AutoCreditConst.MIN_CREDIT : MortgageConst.MIN_CREDIT;
+    const minCost = isAutoCredit ? AutoCreditConst.MIN_COST : MortgageConst.MIN_COST;
+    const maxCost = isAutoCredit ? AutoCreditConst.MAX_COST : MortgageConst.MAX_COST;
     const cost = useSelector(state => getValidValue(state.cost, minCost, maxCost));
     const useMotherCapital = useSelector(state => state.useMotherCapital);
-    const maxFeeCost = cost - minCredit - MortgageConsts.PARENT_CAPITAL * (useMotherCapital && !isAutoCredit);
-    const minFee = isAutoCredit ? AutoCreditConsts.MIN_FEE : MortgageConsts.MIN_FEE;
+    const maxFeeCost = cost - minCredit - MortgageConst.PARENT_CAPITAL * (useMotherCapital && !isAutoCredit);
+    const minFee = isAutoCredit ? AutoCreditConst.MIN_FEE : MortgageConst.MIN_FEE;
     const fee = useSelector(state => getValidValue(state.fee, getCostOfPercent(minFee, cost), maxFeeCost));
-    const creditSum = useSelector(state => cost - fee - MortgageConsts.PARENT_CAPITAL *
+    const creditSum = useSelector(state => cost - fee - MortgageConst.PARENT_CAPITAL *
         (state.useMotherCapital && state.option === CreditTarget.MORTGAGE)) || minCredit;
     const useKacko = useSelector(state => state.useKacko);
     const useLifeInsurance = useSelector(state => state.useLifeInsurance);
     const period = useSelector(state => state.period);
     
     const getPercents = () => {
-        let percent = AutoCreditConsts.MAX_INTEREST_RATE;
+        let percent = AutoCreditConst.MAX_INTEREST_RATE;
         if (isAutoCredit) {
-            if (cost >= AutoCreditConsts.MONEY_BORDER) {
-                percent = AutoCreditConsts.MIN_INTEREST_RATE;
+            if (cost >= AutoCreditConst.MONEY_BORDER) {
+                percent = AutoCreditConst.MIN_INTEREST_RATE;
             }
             if (useKacko || useLifeInsurance) {
-                percent = AutoCreditConsts.MAX_INTEREST_RATE_ADD;
+                percent = AutoCreditConst.MAX_INTEREST_RATE_ADD;
             }
             if (useKacko && useLifeInsurance) {
-                percent = AutoCreditConsts.MIN_INTEREST_RATE_ALL_ADD;
+                percent = AutoCreditConst.MIN_INTEREST_RATE_ALL_ADD;
             }
         }
         else {
-            if (fee * 100 < MortgageConsts.PERCENT_FEE_OF_COST_BORDER * cost) {
-                percent = MortgageConsts.MAX_INTEREST_RATE;
-            } else {
-                percent = MortgageConsts.MIN_INTEREST_RATE;
-            }
+            fee * 100 < MortgageConst.PERCENT_FEE_OF_COST_BORDER * cost  ?
+                percent = MortgageConst.MAX_INTEREST_RATE :  percent = MortgageConst.MIN_INTEREST_RATE;
         }
         return percent;
     };

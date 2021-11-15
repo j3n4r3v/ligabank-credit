@@ -11,7 +11,7 @@ import {
 } from '../../store/actions';
 import { saveUserDataToLocalStorage } from '../../store/local-storage';
 
-import { AutoCreditConsts, CreditTarget, MortgageConsts } from '../utils/const';
+import { AutoCreditConst, CreditTarget, MortgageConst } from '../utils/const';
 import { getCostOfPercent, getValidValue } from '../utils/utils';
 
 import './calculator.scss';
@@ -31,11 +31,11 @@ const Calculator = ({ className }) => {
     const useMotherCapital = useSelector(state => state.useMotherCapital);
     const isAutoCredit = useSelector(state => state.option === CreditTarget.AUTO_CREDIT);
 
-    const minCost = isAutoCredit ? AutoCreditConsts.MIN_COST : MortgageConsts.MIN_COST;
-    const maxCost = isAutoCredit ? AutoCreditConsts.MAX_COST : MortgageConsts.MAX_COST;
-    const minCredit = isAutoCredit ? AutoCreditConsts.MIN_CREDIT : MortgageConsts.MIN_CREDIT;
-    const maxFeeCost = getValidValue(cost, minCost, maxCost) - minCredit - MortgageConsts.PARENT_CAPITAL * (useMotherCapital && !isAutoCredit);
-    const minFee = isAutoCredit ? AutoCreditConsts.MIN_FEE : MortgageConsts.MIN_FEE;
+    const minCost = isAutoCredit ? AutoCreditConst.MIN_COST : MortgageConst.MIN_COST;
+    const maxCost = isAutoCredit ? AutoCreditConst.MAX_COST : MortgageConst.MAX_COST;
+    const minCredit = isAutoCredit ? AutoCreditConst.MIN_CREDIT : MortgageConst.MIN_CREDIT;
+    const maxFeeCost = getValidValue(cost, minCost, maxCost) - minCredit - MortgageConst.PARENT_CAPITAL * (useMotherCapital && !isAutoCredit);
+    const minFee = isAutoCredit ? AutoCreditConst.MIN_FEE : MortgageConst.MIN_FEE;
 
     const onSuggestBtnClick = () => {
         dispatch(saveData({

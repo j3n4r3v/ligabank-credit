@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import firstSlide from './1-desktop.png';
-import secondSlide from './2-desktop.png';
-import thirdSlide from './3-desktop.png';
-
 import './preview.scss';
 
 const Preview = ({ className, title, subtitle, button, img, isLight }) => {
@@ -32,47 +28,6 @@ const Preview = ({ className, title, subtitle, button, img, isLight }) => {
     );
 };
 
-const FirstSlide = ({ className }) => (
-    <Preview className={`${className} preview--first`}
-        title="Лига Банк"
-        subtitle="Кредиты на любой случай"
-        isLight={true}
-        button={{
-            title: 'Рассчитать кредит',
-            href: '#calculator',
-        }}
-        img={{
-            alt: 'Пример белой карты клиента нашего банка',
-            src: firstSlide
-        }} />
-);
-
-const SecondSlide = ({ className }) => (
-    <Preview className={`${className} preview--second`}
-        title="Лига Банк"
-        subtitle="Ваша уверенность в&nbsp;завтрашнем дне"
-        isLight={false}
-        img={{
-            alt: 'Клиент нашего банка',
-            src: secondSlide
-        }} />
-);
-
-const ThirdSlide = ({ className }) => (
-    <Preview className={`${className} preview--third`}
-        title="Лига Банк"
-        subtitle="Всегда рядом"
-        isLight={false}
-        button={{
-            title: 'Найти отделение',
-            href: '#map'
-        }}
-        img={{
-            alt: 'Клиент нашего банка',
-            src: thirdSlide
-        }} />
-);
-
 Preview.propTypes = {
     className: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -82,16 +37,4 @@ Preview.propTypes = {
     img: PropTypes.shape({ alt: PropTypes.string, src: PropTypes.string }),
 };
 
-FirstSlide.propTypes = {
-    className: PropTypes.string.isRequired
-};
-
-SecondSlide.propTypes = {
-    className: PropTypes.string.isRequired
-};
-
-ThirdSlide.propTypes = {
-    className: PropTypes.string.isRequired
-};
-
-export { FirstSlide, SecondSlide, ThirdSlide };
+export {Preview};

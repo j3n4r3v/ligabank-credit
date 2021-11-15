@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
-import { CreditTargetNames } from '../utils/const';
+import { CreditTargetName } from '../utils/const';
 import { OptionsList } from '../options-list/options-list';
 import { changeOption } from '../../store/actions';
 
@@ -21,7 +21,7 @@ const CalculatorSelect = ({ className }) => {
             
             <OptionsList
                 className="calculator__calculator-options"
-                options={CreditTargetNames}
+                options={CreditTargetName}
                 title={'Выберите цель кредита'}
                 onChange={(value) => onChangeTarget(value)}
             />

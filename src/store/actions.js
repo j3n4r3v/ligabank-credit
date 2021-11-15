@@ -1,4 +1,4 @@
-export const Actions = {
+const Actions = {
     CHANGE_VISIBLE_MENU: 'CHANGE_VISIBLE_MENU',
     CHANGE_VISIBLE_MODAL_LOGIN: 'CHANGE_VISIBLE_MODAL_LOGIN',
     LOGIN: 'LOGIN',
@@ -14,65 +14,69 @@ export const Actions = {
     DELETE_DATA: 'DELETE_DATA'
 };
 
-export const changeVisibleMenu = (payload) => ({
+const changeVisibleMenu = (payload) => ({
     type: Actions.CHANGE_VISIBLE_MENU,
     payload: payload
 });
 
-export const changeVisibleModalLogin = (payload) => ({
+const changeVisibleModalLogin = (payload) => ({
     type: Actions.CHANGE_VISIBLE_MODAL_LOGIN,
     payload: payload
 });
 
-export const login = (payload) => ({
+const login = (payload) => ({
     type: Actions.LOGIN,
     payload: payload
 });
 
-export const logout = () => ({
+const logout = () => ({
     type: Actions.LOGOUT
 });
 
-export const changeOption = (payload) => ({
+const changeOption = (payload) => ({
     type: Actions.ON_CHANGE_OPTION,
     payload: payload
 });
 
-export const changeCost = (payload) => ({
+const changeCost = (payload) => ({
     type: Actions.CHANGE_COST,
     payload: payload
 });
 
-export const changeFee = (payload) => ({
+const changeFee = (payload) => ({
     type: Actions.CHANGE_FEE,
     payload: payload
 });
 
-export const changePeriod = (payload) => ({
+const changePeriod = (payload) => ({
     type: Actions.CHANGE_PERIOD,
     payload: payload
 });
 
-export const changeUseMotherCapital = (payload) => ({
+const changeUseMotherCapital = (payload) => ({
     type: Actions.CHANGE_USE_MOTHER_CAPITAL,
     payload: payload
 });
 
-export const changeUseKasko = (payload) => ({
+const changeUseKasko = (payload) => ({
     type: Actions.CHANGE_USE_KASKO,
     payload: payload
 });
 
-export const changeUseLifeInsurance = (payload) => ({
+const changeUseLifeInsurance = (payload) => ({
     type: Actions.CHANGE_USE_LIFE_INSURANCE,
     payload: payload
 });
 
-export const saveData = (payload) => ({
+const saveData = (payload) => ({
     type: Actions.SAVE_DATA,
     payload: payload
 });
 
-export const deleteData = () => ({
+const deleteData = () => ({
     type: Actions.DELETE_DATA,
 });
+
+export {Actions, changeVisibleMenu, changeVisibleModalLogin, login, logout, changeOption, changeCost,
+    changeFee, changePeriod, changeUseMotherCapital, changeUseKasko,  changeUseLifeInsurance, saveData,
+    deleteData};

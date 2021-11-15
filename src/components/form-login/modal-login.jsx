@@ -6,7 +6,6 @@ import { saveLoginToLocalStorage } from '../../store/local-storage';
 import { getWordsLengthFromValue } from '../utils/utils';
 import { PASSWORD_LENGTH } from '../utils/const';
 
-import { Button } from '../button/button';
 import { Input } from '../input/input';
 import { Logo } from '../logo/logo';
 import { Modal } from '../modal/modal';
@@ -15,7 +14,7 @@ import { ReactComponent as PasswordTypeOn } from './password-type-on.svg';
 
 import './modal-login.scss';
 
-const ModalLogin = () => {
+const ModalLogin = ({onClickCloseModal}) => {
 
     const topTabTrap = useRef();
     const bottomTabTrap = useRef();
@@ -43,7 +42,8 @@ const ModalLogin = () => {
 
         document.addEventListener('focusin', trapFocus)
 
-        return () => document.removeEventListener('focusin', trapFocus)
+        return () =>
+         document.removeEventListener('focusin', trapFocus)
 
 
     }, [firstFocusableElement, lastFocusableElement])
@@ -85,7 +85,8 @@ const ModalLogin = () => {
     };
 
     return (
-        <Modal handleCloseModal={() => onCloseForm()} ref={lastFocusableElement}>
+
+        <Modal onClickCloseModal={() => onCloseForm()}>
 
             <form className="modal-login" onSubmit={(evt) => onSubmitLoginModal(evt)}>
                 <h2 className="visually-hidden">Введите e-mail и пароль</h2>
@@ -93,13 +94,21 @@ const ModalLogin = () => {
 
                     <span ref={topTabTrap} tabIndex="0" />
 
+                    <button 
+                        className= "modal-login__close close-button"
+                        onClick={() => onCloseForm()}
+                        type="button"
+                        name="close button"
+                        tabIndex="0"
+                        ref={firstFocusableElement}
+                            >Закрыть</button>
+
                     <Logo className="modal-login__logo" />
 
                     <Input 
                         id="email"
                         label="Логин"
                         className={`${errorEmail && 'input--error'} modal-login__input`}
-                        ref={firstFocusableElement}
                         type="email"
                         defaultValue={''}
                         autoFocus
@@ -108,6 +117,7 @@ const ModalLogin = () => {
                             setErrorEmail('');
                             setEmail(evt.target.value);
                         }}
+                        name="email"
                     />
                     <div className="modal-login__input-wrapper">
                         
@@ -122,6 +132,7 @@ const ModalLogin = () => {
                                 setErrorPassword('');
                                 setPassword(evt.target.value);
                             }}
+                            name="password"
                         />
 
                         <button className="input__password-img"
@@ -134,20 +145,22 @@ const ModalLogin = () => {
                         </button>
 
                     </div>
-                    <a className="modal-login__link" href="/">Забыли пароль?</a>
+                    <a className="modal-login__link"
+                        href="/">Забыли пароль?</a>
 
-                    <Button
+                    <button
                         type="submit"
-                        className="modal-login__submit"
-                        nameButton="Войти"
+                        ref={lastFocusableElement}
+                        className="button modal-login__submit"
                         name="submit info"
-                      />
+                    >Войти</button>
 
                 </div>
                 <span ref={bottomTabTrap} tabIndex="0"/>
             </form>
         </Modal>
+
     );
 };
 
-export { ModalLogin };
+export { ModalLogin};

@@ -9,6 +9,7 @@ const InputCheckbox = ({ className, value, label, onChange, id }) => {
         <label className={`${className} input-checkbox`} htmlFor={id}>
             <input
                 type="checkbox"
+                name ="checkbox"
                 id={id}
                 onChange={(evt) => onChange(evt.target.checked)}
                 checked={value} />

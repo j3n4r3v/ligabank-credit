@@ -19,13 +19,13 @@ const OptionsList = ({ options, className, onChange, title }) => {
                 {isOpenList ? title : options[option] || title}
             </span>
             {isOpenList && <div className={'list__options'}>
-                {Object.keys(options).map((key, i) =>
+                {Object.keys(options).map((option, i) =>
                     <span 
-                        onClick={() => onChange(key)}
-                        key={key + i}
+                        onClick={() => onChange(option)}
+                        key={option + i}
                         className="list__option"
                         tabIndex="0">
-                        {options[key]}
+                        {options[option]}
                     </span>
                 )}
             </div>}
