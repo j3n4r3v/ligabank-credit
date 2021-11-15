@@ -73,14 +73,20 @@ const ModalLogin = ({onClickCloseModal}) => {
 
     const validateField = (fieldName, value) => {
         switch (fieldName) {
-            case 'email':
+
+            case 'email': {
                 return value && value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
-                    ? '' : 'Email введен некорректно';
-            case 'password':
+                    ? '' : 'Email введен некорректно' 
+                }
+
+            case 'password': {
                 return value && value.length >= PASSWORD_LENGTH
                     ? '' : `Пароль должен быть больше ${getWordsLengthFromValue(PASSWORD_LENGTH, ['символ', 'символа', 'символов'])}`;
-            default:
+            }
+            
+            default: {
                 break;
+            }
         }
     };
 

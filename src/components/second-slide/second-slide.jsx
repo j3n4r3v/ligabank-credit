@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 import {Preview} from "../preview/preview";
 import secondSlide from './2-desktop.png';
 
+import './second-slide.scss';
+
 const SecondSlide = ({ className }) => (
-    <Preview className={`${className} preview--first`}
+    <Preview className={`${className} preview--second`}
         title="Лига Банк"
         subtitle="Кредиты на любой случай"
         isLight={true}

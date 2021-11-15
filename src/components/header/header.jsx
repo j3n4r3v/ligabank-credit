@@ -10,6 +10,7 @@ import { Slider } from '../slider/slider';
 
 import './header.scss';
 
+
 const Header = () => {
     return (
         <header className="header">
