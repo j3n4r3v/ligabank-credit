@@ -6,6 +6,7 @@
   padding: 15px 45px 45px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
 
   @media (max-width: $mobile-width-only) {
@@ -66,7 +67,7 @@
 
 .summary__group {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   margin-bottom: 12px;
 
@@ -109,6 +110,7 @@
 .summary__list {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   list-style: none;
   flex-grow: 1;
   width: 100%;
@@ -117,7 +119,7 @@
 
 .list__item {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   flex-grow: 1;
   justify-content: space-between;
 

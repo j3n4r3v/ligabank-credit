@@ -3,12 +3,13 @@
 .logo {
   cursor: pointer;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 
   @media (max-width: $mobile-width-only) {
     margin-right: auto;
     padding-left: 7px;
-    max-width: 150px;
+    max-width: 163px;
   }
 
   &:hover,

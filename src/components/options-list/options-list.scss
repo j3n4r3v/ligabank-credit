@@ -5,6 +5,7 @@
 .list {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   position: relative;
   width: 100%;
@@ -56,6 +57,7 @@
 .list__options {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   list-style: none;
   flex-grow: 1;

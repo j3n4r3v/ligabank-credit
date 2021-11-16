@@ -40,6 +40,7 @@
 .suggest__wrapper {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   margin-bottom: 26px;
 
   @media (min-width: $tablet-width) {
@@ -70,10 +71,10 @@
 .suggest__bottom {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 
   @media (min-width: $tablet-width) {
     flex-direction: row;
-    flex-wrap: wrap;
   }
 }
 

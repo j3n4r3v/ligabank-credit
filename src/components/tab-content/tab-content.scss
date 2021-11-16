@@ -94,6 +94,7 @@
 .tab-content__left {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   width: 100vw;
 }
 
@@ -163,6 +164,7 @@
 .tab-content__list {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   list-style: none;
 
   @media (max-width: $mobile-width-only) {
@@ -183,6 +185,7 @@
   display: flex;
   position: relative;
   flex-direction: column;
+  flex-wrap: wrap;
 
   font-size: 14px;
   line-height: 18px;

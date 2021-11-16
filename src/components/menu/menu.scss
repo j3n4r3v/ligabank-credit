@@ -44,6 +44,7 @@
 
   &--column .menu__item--only-footer {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &--column .menu__item--only-header {

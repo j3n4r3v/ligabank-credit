@@ -5,6 +5,7 @@
 .info-block {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   padding: 40px;
   background-color: $color-service--lightest;
   align-self: center;

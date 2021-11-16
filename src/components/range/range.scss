@@ -4,6 +4,7 @@
 .range {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   cursor: pointer;
 }
 
@@ -47,4 +48,5 @@
   @include desc;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }

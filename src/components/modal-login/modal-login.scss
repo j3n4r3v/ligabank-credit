@@ -7,6 +7,7 @@
   height: auto;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   padding: 60px;
   border: 4px $color-main solid;
@@ -35,6 +36,7 @@
 .modal-login__wrapper {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
 }
 

@@ -3,7 +3,7 @@
 
 .indicators {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   position: absolute;
   list-style: none;
   bottom: 5%;

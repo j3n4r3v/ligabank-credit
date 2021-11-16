@@ -12,9 +12,6 @@ const NamesButton = {
 
 const InputButtons = ({ className, onChange, step, value, id, ...rest }) => {
 
-
-
-
     const hundleValueChange = (target) => {
         
         switch (target) {

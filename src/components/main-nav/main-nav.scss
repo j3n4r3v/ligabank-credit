@@ -5,6 +5,7 @@
   position: relative;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   min-height: 48px;
   justify-content: space-between;
   align-items: center;
@@ -79,6 +80,7 @@
 .menu--closed {
   display: flex;
   flex-direction: row;
+  // flex-wrap: wrap;
 }
 
 .burger__button--mobile {
