@@ -10,12 +10,11 @@ const Modal = ({children, onClickCloseModal}) => {
     const overlayRef = useRef();
 
     useEffect(() => {
-        const preventWheelScroll = (evt) => evt.preventDefault();
             document.addEventListener('keydown', hundleEscClick);
-            window.addEventListener('wheel', preventWheelScroll, { passive: false });
+            document.body.style.overflow = "hidden";
         return () => {
             document.removeEventListener('keydown', hundleEscClick);
-            window.removeEventListener('wheel', preventWheelScroll);
+            document.body.style.overflow = "auto"
         };
     });
 
