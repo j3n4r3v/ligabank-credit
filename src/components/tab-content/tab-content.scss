@@ -35,6 +35,9 @@
     width: 91vw;
     margin-left: 4px;
   }
+  @media (min-width: $tablet-width) {
+    margin-left: -2px;
+  }
 }
 
 .tab-content__btn {
@@ -64,6 +67,7 @@
   line-height: 22px;
   font-weight: 500;
   margin-bottom: 18px;
+  word-break: keep-all;
   color: $color-service;
 
   @media (min-width: $tablet-width) {
@@ -144,9 +148,6 @@
 .tab-content__img {
   object-fit: cover;
   object-position: 50%;
-  width: 87px;
-  height: 113px;
-
 
   @media (min-width: $tablet-width) {
     object-position: 113%;
@@ -166,6 +167,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   list-style: none;
+  word-break: keep-all;
 
   @media (max-width: $mobile-width-only) {
     max-width: 80%;

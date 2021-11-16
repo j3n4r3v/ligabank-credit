@@ -47,7 +47,12 @@ const TabContent = ({ className, title, list, button, img, desc }) => {
                 <picture>
                     <source srcSet={img.srcDesktop} media="(min-width: 1024.2px)" />
                     <source srcSet={img.srcTablet} media="(min-width: 768.2px)" />
-                        <img className="tab-content__img" src={img.srcMobile} alt={img.alt} />
+                        <img className="tab-content__img"
+                         src={img.srcMobile}
+                          alt={img.alt}
+                          width= "87"
+                          height= "113"
+                        />
                 </picture>
             </div>
 

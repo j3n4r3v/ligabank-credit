@@ -21,7 +21,7 @@ const Preview = ({ className, title, subtitle, button, img, isLight }) => {
                     }
                 </div>
                 <div className="preview__right">
-                  <img className="preview__img" src={img.src} alt={img.alt} />
+                  <img className="preview__img" src={img.src} alt={img.alt}  />
                 </div>
             </div>
         </section>

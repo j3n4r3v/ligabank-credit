@@ -49,12 +49,12 @@
 
 .calculator__success {
   @media (max-width: $mobile-width-only) {
-    margin: 0 5px;
+    margin: 0 1px;
   }
 }
 
 .calculator__calculator-options {
   @media (min-width: $desktop-width) {
-    margin-bottom: 34px;
+    margin-bottom: 14px;
   }
 }

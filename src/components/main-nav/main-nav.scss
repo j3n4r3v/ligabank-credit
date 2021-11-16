@@ -14,7 +14,7 @@
     border-bottom: 2px rgba($color-service--lighten, 0.4) solid;
   }
 
-  @media (min-width: $mobile-width-only) {
+  @media (min-width: $tablet-width) {
     min-height: 69px;
   }
 
@@ -41,7 +41,6 @@
   @media (max-width: $mobile-width-only) {
     position: absolute;
     background-color: $color-service--lightest;
-    overflow-y: scroll;
     padding: 33px 15px 0;
     width: 100%;
     z-index: 50;
@@ -80,7 +79,6 @@
 .menu--closed {
   display: flex;
   flex-direction: row;
-  // flex-wrap: wrap;
 }
 
 .burger__button--mobile {

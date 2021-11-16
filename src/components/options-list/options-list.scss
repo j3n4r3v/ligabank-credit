@@ -51,6 +51,10 @@
 
     background-image: url("option.svg");
     background-repeat: no-repeat;
+
+    @media (max-width: $mobile-width-only) {
+      right: 12px;
+    }
   }
 }
 
@@ -90,6 +94,6 @@
   }
 
   @media (max-width: $mobile-width-only) {
-    padding: 18px 16px;
+    padding: 18px 12px;
   }
 }

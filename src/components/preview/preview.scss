@@ -38,6 +38,8 @@
 
   &--light {
     @include button-outline;
+        margin-left: -2px;
+        padding: 14px 34px;
   }
 }
 

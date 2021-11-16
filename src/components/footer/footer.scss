@@ -88,6 +88,12 @@
   }
 }
 
+.footer__address .logo {
+  @media (max-width: $mobile-width-only) {
+    flex-wrap: nowrap;
+  }
+}
+
 .footer__address > .footer__desk {
   @media (max-width: $mobile-width-only) {
     display: none;
@@ -193,6 +199,7 @@
     
   @media (min-width: $desktop-width) {
     margin-top: 60px;
+    max-width: 222px;
   }
 }
 
@@ -216,7 +223,7 @@
   margin-top: 14px;
 
   @media (max-width: $mobile-width-only) {
-    margin-left: -3px;
+    margin-left: -2px;
   }
 
   @media (min-width: $tablet-width) {
@@ -233,4 +240,8 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+
+  @media (max-width: $mobile-width-only) {
+    flex-wrap: nowrap;
+  }
 }
