@@ -4,7 +4,7 @@ import App from './app';
 
 import { createStore} from 'redux';
 import { Provider } from 'react-redux';
-import reducer from './store/reducer';
+import {reducer} from './store/reducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import './index.scss';

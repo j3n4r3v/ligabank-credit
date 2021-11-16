@@ -43,7 +43,7 @@ const CalculatorOptions = ({ className, onSuggestBtnClick }) => {
         <div className={`${className} calculator-options`}>
             <div className="calculator-options__left">
 
-                    <CalculatorSelect className="calculator-options__list" />
+                    <CalculatorSelect className="calculator__options-list" />
                 {option != null &&
                     <CalculatorInputs className="calculator-options__inputs" />
                 }

@@ -141,14 +141,11 @@
 }
 
 .tab-content__img {
-  width: auto;
   object-fit: cover;
+  object-position: 50%;
+  width: 87px;
+  height: 113px;
 
-  @media (max-width: $mobile-width-only) {
-    object-position: 50%;
-    width: 87px;
-    height: 113px;
-  }
 
   @media (min-width: $tablet-width) {
     object-position: 113%;
