@@ -42,7 +42,7 @@ const Modal = ({children, onClickCloseModal}) => {
 
 Modal.propTypes = {
     onClickCloseModal: PropTypes.func.isRequired,
-    children: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)])
 };
 
 export { Modal };

@@ -77,7 +77,8 @@ const Credit = ({ className }) => (
         className={className}
         title="Лига Банк выдает кредиты под любые цели"
         list={['Ипотечный кредит', 'Автокредит', 'Потребительский кредит']}
-        desc={<>Рассчитайте ежемесячный платеж и ставку по кредиту воспользовавшись нашим <span className="text-decoration">кредитным калькулятором</span></>}
+        desc={<>Рассчитайте ежемесячный платеж и ставку по кредиту воспользовавшись нашим <a href ="#calculator" className="text-decoration calculator-ref">кредитным калькулятором</a>
+             </>}
         img={{
             alt: 'Машина',
             srcMobile: creditsMobile,
@@ -127,7 +128,7 @@ TabContent.propTypes = {
     list: PropTypes.arrayOf(PropTypes.string),
     button: PropTypes.shape({ title: PropTypes.string, href: PropTypes.string }),
     img: PropTypes.shape({ alt: PropTypes.string, src: PropTypes.string }),
-    desc: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+    desc: PropTypes.oneOfType([PropTypes.node, PropTypes.string])
 };
 
 Deposit.propTypes = {

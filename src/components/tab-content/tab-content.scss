@@ -25,6 +25,10 @@
   }
 }
 
+.calculator-ref {
+  color: $color-black;
+}
+
 .tab-content__button {
 
   @media (max-width: $tablet-width) {

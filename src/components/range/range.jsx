@@ -52,7 +52,7 @@ Range.propTypes = {
     onChangeRange: PropTypes.func.isRequired,
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     label: PropTypes.string,
-    desc: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    desc: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     min: PropTypes.number,
     max: PropTypes.number,
     step: PropTypes.number,

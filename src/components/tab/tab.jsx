@@ -26,7 +26,7 @@ Tab.propTypes = {
     className: PropTypes.string.isRequired,
     nameButton: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
-    children: PropTypes.object.isRequired
+    children: PropTypes.node.isRequired
 };
 
 export { Tab };
