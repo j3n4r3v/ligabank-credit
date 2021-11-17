@@ -8,7 +8,6 @@
 
 .footer__wrapper {
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-start;
 
   @media (max-width: $mobile-width-only) {
@@ -32,7 +31,6 @@
 
   @media (min-width: $desktop-width) {
     display: flex;
-    flex-wrap: wrap;
     padding: 0;
   }
 }
@@ -44,7 +42,6 @@
 
   @media (min-width: $desktop-width) {
     display: flex;
-    flex-wrap: wrap;
   }
 }
 
