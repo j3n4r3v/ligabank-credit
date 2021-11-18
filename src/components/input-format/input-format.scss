@@ -1,5 +1,7 @@
 @import "../../styles/colors.scss";
 @import "../../styles/mixins";
+@import "../../styles/const-width";
+
 
 .input {
   display: flex;
@@ -26,6 +28,14 @@
 
 .input__text {
   @include input-field;
+
+}
+
+.correct-text {
+  text-align: start;
+  @media (max-width: $desktop-width) {
+    padding-left: 23px;
+  }
 }
 
 .input:hover .input__text,

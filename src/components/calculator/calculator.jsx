@@ -39,7 +39,7 @@ const Calculator = ({ className }) => {
 
     const hundleSuggestBtnClick = () => {
         dispatch(saveData({
-            count: data.count + 1,
+            count: data.count,
             option: option,
             cost: getValidValue(cost, minCost, maxCost),
             fee: getValidValue(fee, getCostOfPercent(minFee, getValidValue(cost, minCost, maxCost)), maxFeeCost),
@@ -50,7 +50,7 @@ const Calculator = ({ className }) => {
     const hundleSubmitClick = ({ name, phone, email }) => {
         dispatch(deleteData());
         dispatch(saveData({
-            count: data.count + 1
+            count: data.count
         }));
         saveUserDataToLocalStorage({ name, phone, email });
         dispatch(saveData({ email, phone, name }));

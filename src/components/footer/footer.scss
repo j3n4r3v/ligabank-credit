@@ -161,6 +161,7 @@
 
     @media (min-width: $desktop-width) {
       margin-top: 57px;
+      margin-right: 70px;
   }
 }
 
@@ -197,6 +198,7 @@
   @media (min-width: $desktop-width) {
     margin-top: 60px;
     max-width: 222px;
+    margin-right: 59px;
   }
 }
 
@@ -229,7 +231,10 @@
   }
 
   @media (min-width: $desktop-width) {
+    margin: 0;
     margin-top: 55px;
+    column-gap: 15px;
+    width: 109px;
   }
 }
 

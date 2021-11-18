@@ -15,7 +15,7 @@ const InputTel = (props) => {
                 {...props}
                 value={newValue}
                 mask="+7111-111-11-11"
-                className="input__text"
+                className="input__text correct-text"
                 type="text"
                 id={props.id}
             />

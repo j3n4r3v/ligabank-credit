@@ -7,7 +7,7 @@ import {InputTel} from '../input-tel/input-tel';
 import {Input} from '../input/input';
 
 import { CreditTarget } from '../utils/const';
-import { getWordsLengthFromValue } from '../utils/utils';
+import {getWordsLengthFromValue} from '../utils/utils'
 
 import './summary.scss';
 
@@ -69,7 +69,7 @@ const Summary = ({ className, onClick}) => {
             <ul className="summary__list">
                 <li className="summary__item list__item">
                     <span className="item__title">Номер заявки</span>
-                    <span className="item__value">№{data.count}</span>
+                    <span className="item__value">№001</span>
                 </li>
                 <li className="summary__item list__item">
                     <span className="item__title">Цель кредита</span>
@@ -85,7 +85,7 @@ const Summary = ({ className, onClick}) => {
                 </li>
                 <li className="summary__item list__item">
                     <span className="item__title">Срок кредитования</span>
-                    <span className="item__value">{getWordsLengthFromValue(data.period, ['год', 'года', 'лет'])}</span>
+                    <span className="item__value">{getWordsLengthFromValue(data.period , ['лет', 'года', 'лет'])}</span>
                 </li>
             </ul>
             <Input

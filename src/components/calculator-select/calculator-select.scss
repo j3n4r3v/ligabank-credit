@@ -1,13 +1,5 @@
 @import "../../styles/const-width";
 
-.calculator-options {
-  margin-bottom: 30px;
-
-  @media (max-width: $mobile-width-only) {
-    margin-bottom: 25px;
-  }
-}
-
 .calculator-options__subtitle {
   margin-bottom: 15px;
 

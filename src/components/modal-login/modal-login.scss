@@ -56,7 +56,8 @@
   font-weight: 400;
   color: $color-service--light;
   text-decoration: none;
-  text-align: right;
+  width: 23%;
+  align-self: end;
 
   @media (max-width: $mobile-width-only) {
     margin-top: 10px;

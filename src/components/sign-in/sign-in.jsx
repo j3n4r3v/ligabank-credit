@@ -29,7 +29,7 @@ const SignIn = ({ className }) => {
 
     return (
         <div className={`${className} sign-in ${mobileMenuIsOpen ? 'sign-in__mobile--burger' : ''} `}>
-            <button type="button" className="sign-in__button" name="sign in" onClick={() => hundleSignInClick()}>
+            <button type="button" className="sign-in__button" aria-label="sign in" onClick={() => hundleSignInClick()}>
 
                 <SignInImg />
 

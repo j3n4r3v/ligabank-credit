@@ -1,4 +1,5 @@
 @import "colors";
+@import "const-width";
 
 @mixin title {
   font-size: 41px;
@@ -10,8 +11,8 @@
 @mixin flex-row-center {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   flex-grow: 1;
+  flex-wrap: wrap;
   justify-content: center;
   align-content: center;
 
@@ -168,6 +169,7 @@
 
   width: 100%;
   padding: 17px;
+  padding-left: 23px;
   border: 1px $color-service solid;
 
   &:focus,

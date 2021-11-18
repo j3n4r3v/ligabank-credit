@@ -7,7 +7,7 @@ const Input = ({ desc, label, className, type, id, ...props }) => {
             <span className="input__label">
                 {label}
             </span>
-            <input className="input__text" type={type || 'number'} id={id} name="input-text" {...props}  />
+            <input className="input__text correct-text" type={type || 'number'} id={id} name="input-text" {...props}  />
             <span className="input__desc">
                 {desc}
             </span>

@@ -4,10 +4,16 @@
 .calculator-options {
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
+
+  @media (max-width: $mobile-width-only) {
+    margin-bottom: 25px;
+  }
 
   @media (min-width: $desktop-width) {
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 16px;
   }
 }
 

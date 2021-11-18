@@ -19,6 +19,10 @@
   display: none;
 }
 
+label input[type='checkbox']:focus {
+  outline: 1px solid $color-red;
+}
+
 .input-checkbox span:before {
   content: '';
   height: 16px;

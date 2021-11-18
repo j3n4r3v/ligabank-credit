@@ -12,6 +12,14 @@
     margin-bottom: 20px;
   }
 }
+
+.calculator-inputs{
+  @media (min-width: $tablet-width) {
+    margin-bottom: 42px;
+  }
+}
+
+
 .calculator-inputs__parameter {
   margin-bottom: 8px;
 

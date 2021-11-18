@@ -82,7 +82,7 @@ const Suggest = ({ className, onClick }) => {
                     </p>
                     <p className="suggest__result">
 
-                        {getPercents()}%
+                        {getPercents()}0%
 
                         <small className="suggest__desc">
                             Процентная ставка
@@ -103,7 +103,7 @@ const Suggest = ({ className, onClick }) => {
                         {getWordsLengthFromValue(getRequiredIncome(), ['рубль', 'рубля', 'рублей'])}
 
                         <small className="suggest__desc">
-                            Необходимый доход
+                            Необходимый&nbsp;доход
                         </small>
                     </p>
                 </div>

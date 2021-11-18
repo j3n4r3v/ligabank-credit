@@ -134,7 +134,7 @@ const CalculatorInputs = ({ className }) => {
                     range={period}
                     min={minPeriod}
                     max={maxPeriod}
-                    mask={getWordsLength(period, ['год', 'года', 'лет'])}
+                    mask={''}
                     label="Срок кредитования"
                     desc={<>
                         <span>{getWordsLengthFromValue(minPeriod, ['год', 'года', 'лет'])}</span>

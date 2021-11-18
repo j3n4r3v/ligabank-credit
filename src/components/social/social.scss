@@ -9,9 +9,6 @@
   flex-wrap: wrap;
   justify-content: flex-start;
 
-  @media (min-width: $desktop-width) {
-    justify-content: space-around;
-  }
 }
 
 .social__item {
@@ -28,8 +25,10 @@
   }
 
   @media (min-width: $desktop-width) {
-    padding: 7px 0 0 8px;
-    width: 26px;
+    margin: 0;
+    padding: 0;
+    padding-top: 7px;
+    width: 16px;
   }
 }
 

@@ -25,6 +25,10 @@
     opacity: 1;
   }
 
+  &:focus {
+    background: $color-red;
+  }
+
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -43,6 +47,11 @@
     cursor: pointer;
   }
 }
+
+.range__slider::-moz-range-thumb:focus {
+  background: $color-red;
+}
+
 
 .range__desc {
   @include desc;

@@ -34,7 +34,7 @@ const Footer = () => {
                     <MobileIcon className="footer__mobile-icon" />
 
                         <a href="tel:0904" className="footer__tel">*0904</a>
-                        <p className="footer__desk">Бесплатно для&nbsp;абонентов МТС, Билайн, Мегафон, Теле2</p>
+                        <p className="footer__desk">Бесплатно для&nbsp;абонентов <br /> МТС, Билайн, Мегафон, Теле2</p>
                     </div>
                     <div className="footer__telephone">
 

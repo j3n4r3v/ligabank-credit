@@ -16,11 +16,13 @@
     cursor: pointer;
     z-index: 20;
 
-    &:hover,
-    &:focus {
+    &:hover {
         color: $color-main--dark;
     }
-
+    &:focus {
+        color: $color-red;
+        border: 1px solid $color-red;
+    }
     &--minus {
         left: 3%;
     }
