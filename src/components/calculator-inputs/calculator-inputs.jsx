@@ -18,6 +18,9 @@ import './calculator-inputs.scss';
 
 const CalculatorInputs = ({ className }) => {
 
+    // const MIN_VAL = 12000000;
+    // const MAX_VAL = 25000000;
+
     const dispatch = useDispatch();
     const cost = useSelector(state => state.cost);
     const fee = useSelector(state => state.fee);
@@ -45,14 +48,14 @@ const CalculatorInputs = ({ className }) => {
         
         setErrorCost(false)
 
-    if ( value < minCost ) {
-        value = minCost // почему не показывает при changeCost(minCost) ???
-        dispatch(changeCost(value))&&setErrorCost(true);
+        if ( value < minCost ) {
+            value = minCost // почему не показывает при changeCost(minCost) ???
+            dispatch(changeCost(value))&&setErrorCost(true);
 
-    } else if  (value > maxCost) {
-        value = maxCost // почему не показывает при changeCost(maxCost) ???
-        dispatch(changeCost(value))&&setErrorCost(true);
-    } 
+        } else if  (value > maxCost) {
+            value = maxCost // почему не показывает при changeCost(maxCost) ???
+            dispatch(changeCost(value))&&setErrorCost(true);
+        } 
         return dispatch(changeCost(value));
         // setErrorCost(false) --- почему так вот не работает ???
         };
@@ -60,6 +63,10 @@ const CalculatorInputs = ({ className }) => {
     const hundleCostChange = (value) => {
         const validCost = Number.parseFloat(value);
         hundleCostValidate(validCost);
+
+        // if (isFinite(validCost)) {
+        //     dispatch(changeCost(validCost));
+        // }
 
         if (isFinite(validCost) && value > minCost && value < maxCost) {
             dispatch(changeFee(getCostOfPercent(minFee, value)));

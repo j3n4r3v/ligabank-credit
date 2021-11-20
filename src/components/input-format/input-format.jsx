@@ -7,14 +7,14 @@ import './input-format.scss';
 
 const InputFormat = (props) => {
 
-    const MIN_VAL = '1200000';
-    const MAX_VAL = '25000000';
+    const MIN_VAL = 1200000;
+    const MAX_VAL = 25000000;
 
     const withValueLimit = (inputObj) => {
 
         const { floatValue } = inputObj;
 
-        if ((floatValue <= MAX_VAL) || (floatValue >= MIN_VAL)){
+        if ((floatValue < MAX_VAL) || (floatValue > MIN_VAL)){
             return true; 
         }
         return false;
@@ -32,6 +32,7 @@ const InputFormat = (props) => {
                 onBlur={props.onBlur}
                 thousandSeparator={' '}
                 value={props.value}
+                defaultValue={'1'}
                 suffix={' ' + props.mask}
                 onValueChange={(evt) => props.onChangeValue(evt.value)}
                 isAllowed={withValueLimit}
@@ -52,7 +53,7 @@ InputFormat.propTypes = {
     desc: PropTypes.string,
     type: PropTypes.string,
     mask: PropTypes.string,
-    isAllowed: PropTypes.func
+    isAllowed: PropTypes.bool
 };
 
 export { InputFormat };
