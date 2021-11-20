@@ -16,7 +16,10 @@ const Summary = ({ className, onClick}) => {
     const fieldNameLength = 8;
 
     const data = useSelector(state => state.data);
-    const isAutoCredit = data && data.option === CreditTarget.AUTO_CREDIT;
+    const isAutoCredit = useSelector(state => state.option === CreditTarget.AUTO_CREDIT);
+    const cost = useSelector(state => state.cost);
+    const fee = useSelector(state => state.fee);
+    const period = useSelector(state => state.period);
     const [userData, setUserData] = useState({ name: data.name, phone: data.phone, email: data.email });
     const [error, setError] = useState({});
 
@@ -77,15 +80,15 @@ const Summary = ({ className, onClick}) => {
                 </li>
                 <li className="summary__item list__item">
                     <span className="item__title">Стоимость {isAutoCredit ? 'автомобиля' : 'недвижимости'}  </span>
-                    <span className="item__value">{data.cost.toLocaleString()} рублей</span>
+                    <span className="item__value">{cost.toLocaleString()} рублей</span>
                 </li>
                 <li className="summary__item list__item">
                     <span className="item__title">Первоначальный взнос</span>
-                    <span className="item__value">{data.fee.toLocaleString()} рублей</span>
+                    <span className="item__value">{fee.toLocaleString()} рублей</span>
                 </li>
                 <li className="summary__item list__item">
                     <span className="item__title">Срок кредитования</span>
-                    <span className="item__value">{getWordsLengthFromValue(data.period , ['лет', 'года', 'лет'])}</span>
+                    <span className="item__value">{getWordsLengthFromValue(period , ['лет', 'года', 'лет'])}</span>
                 </li>
             </ul>
             <Input

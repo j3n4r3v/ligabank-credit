@@ -13,7 +13,7 @@ const InputCheckbox = ({ className, value, label, onChange, id }) => {
                 id={id}
                 onChange={(evt) => onChange(evt.target.checked)}
                 checked={value} />
-            <span>
+            <span class = "mother-capital">
                 &nbsp;{label}
             </span>
         </label>

@@ -20,8 +20,7 @@
         color: $color-main--dark;
     }
     &:focus {
-        color: $color-red;
-        border: 1px solid $color-red;
+        outline: 1px solid $color-indigo--light;
     }
     &--minus {
         left: 3%;

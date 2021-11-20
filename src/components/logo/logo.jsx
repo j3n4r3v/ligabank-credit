@@ -7,8 +7,9 @@ import { ReactComponent as LogoText } from './logo-text.svg';
 import './logo.scss';
 
 const Logo = ({ className }) => {
+    const someValidPath = '#';
     return (
-        <a href="/" className={`${className} logo`}>
+        <a href={someValidPath} className={`${className} logo`}>
 
             <LogoImg className="logo__img" />
 

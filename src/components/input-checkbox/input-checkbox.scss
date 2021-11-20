@@ -16,10 +16,10 @@
 }
 
 .input-checkbox input {
-  display: none;
+  appearance: none;
 }
 
-label input[type='checkbox']:focus {
+label > input[type='checkbox']:focus-within {
   outline: 1px solid $color-red;
 }
 

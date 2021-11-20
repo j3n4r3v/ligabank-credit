@@ -42,17 +42,25 @@ const CalculatorInputs = ({ className }) => {
     const [errorCost, setErrorCost] = useState(false);
 
     const hundleCostValidate = (value) => {
-        !isFinite(Number.parseFloat(value)) || value < minCost || value > maxCost ?
-            setErrorCost(true) : setErrorCost(false);
-    };
+        
+        // setErrorCost(false)
+
+    if ( value < minCost ) {
+        value = minCost // почему не показывает при changeCost(minCost) ???
+        dispatch(changeCost(value))&&setErrorCost(true)
+
+    } else if  (value > maxCost) {
+        value = maxCost // почему не показывает при changeCost(maxCost) ???
+        dispatch(changeCost(value))&&setErrorCost(true)
+    } 
+        return dispatch(changeCost(value))&&setErrorCost(false);
+        // setErrorCost(false) --- почему так вот не работает ???
+        };
 
     const hundleCostChange = (value) => {
         const validCost = Number.parseFloat(value);
         hundleCostValidate(validCost);
 
-        if (isFinite(validCost)) {
-            dispatch(changeCost(validCost));
-        }
         if (isFinite(validCost) && value > minCost && value < maxCost) {
             dispatch(changeFee(getCostOfPercent(minFee, value)));
         } else {
@@ -104,7 +112,6 @@ const CalculatorInputs = ({ className }) => {
                     mask={getWordsLength(cost, [' рубль', ' рубля', ' рублей'])}
                     step={stepCost}
                     onChange={(value) => hundleCostChange(value)}
-                    type="string"
                     label={`Стоимость ${isAutoCredit ? 'автомобиля' : 'недвижимости'}`}
                     desc={`${errorCost ? 'Введите сумму от' : 'От'} ${minCost.toLocaleString()} до ${maxCost.toLocaleString()} рублей`}
                 />
@@ -134,7 +141,7 @@ const CalculatorInputs = ({ className }) => {
                     range={period}
                     min={minPeriod}
                     max={maxPeriod}
-                    mask={''}
+                    mask={getWordsLength(period, ['год', 'года', 'лет'])}
                     label="Срок кредитования"
                     desc={<>
                         <span>{getWordsLengthFromValue(minPeriod, ['год', 'года', 'лет'])}</span>
@@ -176,6 +183,7 @@ const CalculatorInputs = ({ className }) => {
 
 CalculatorInputs.propTypes = {
     className: PropTypes.string.isRequired
+
 };
 
 export { CalculatorInputs };

@@ -82,7 +82,7 @@ const Suggest = ({ className, onClick }) => {
                     </p>
                     <p className="suggest__result">
 
-                        {getPercents()}0%
+                        {getPercents()<10 ? getPercents() + "0" : getPercents()}%
 
                         <small className="suggest__desc">
                             Процентная ставка

@@ -5,17 +5,19 @@ import './slider.scss';
 
 import { SLIDER_TIMEOUT } from '../utils/const';
 
-import SwiperCore, { Autoplay, Pagination } from 'swiper';
+import { Autoplay, Pagination, Keyboard } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import 'swiper/swiper.scss';
 import './pagination.scss';
-SwiperCore.use([Autoplay, Pagination]);
 
-const Slider = ({ className, children }) => {
+// SwiperCore.use([Autoplay, Pagination, Keyboard]);
+
+const Slider = ({children }) => {
 
     return (
 
         <Swiper
+            modules= {[Autoplay, Pagination, Keyboard]}
             spaceBetween={0}
             slidesPerView={1}
             pagination={{ clickable: false }}
@@ -23,9 +25,13 @@ const Slider = ({ className, children }) => {
                 'delay': SLIDER_TIMEOUT,
                 'disableOnInteraction': false
             }}
+            keyboard = {{
+                disable: true,
+                onluInViewport: true
+              }}
         >
 
-        <section className={`${className} slider`}>
+        <section className="slider">
             <div className="slider__img">
                     {children.map((name, i) =>
                         <SwiperSlide key={i+name}>{name}</SwiperSlide>)}
@@ -36,7 +42,6 @@ const Slider = ({ className, children }) => {
 };
 
 Slider.propTypes = {
-    className: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(
         PropTypes.shape({
             src: PropTypes.string.isRequired,

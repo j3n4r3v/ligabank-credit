@@ -6,6 +6,20 @@ import NumberFormat from 'react-number-format';
 import './input-format.scss';
 
 const InputFormat = (props) => {
+
+    const MIN_VAL = '1200000';
+    const MAX_VAL = '25000000';
+
+    const withValueLimit = (inputObj) => {
+
+        const { floatValue } = inputObj;
+
+        if ((floatValue <= MAX_VAL) || (floatValue >= MIN_VAL)){
+            return true; 
+        }
+        return false;
+      };
+
     return (
         <label className={`${props.className} input`} htmlFor={props.id}>
             <span className="input__label">
@@ -20,6 +34,7 @@ const InputFormat = (props) => {
                 value={props.value}
                 suffix={' ' + props.mask}
                 onValueChange={(evt) => props.onChangeValue(evt.value)}
+                isAllowed={withValueLimit}
             />
             <span className="input__desc">
                 {props.desc}
@@ -36,7 +51,8 @@ InputFormat.propTypes = {
     label: PropTypes.string,
     desc: PropTypes.string,
     type: PropTypes.string,
-    mask: PropTypes.string
+    mask: PropTypes.string,
+    isAllowed: PropTypes.func
 };
 
 export { InputFormat };

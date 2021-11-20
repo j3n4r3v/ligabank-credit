@@ -12,6 +12,18 @@ const NamesButton = {
 
 const InputButtons = ({ className, onChange, step, value, id, ...rest }) => {
 
+
+    // const hundleNumberInputValidate = (value) => {
+
+    //     if ( value <= minCost ) {
+    //         dispatch(changeCost(minCost))
+    
+    //     } else if ( value >= maxCost ) {
+    //         dispatch(changeCost(maxCost))
+    //     }
+    //         return value;
+    // };
+
     const hundleValueChange = (target) => {
         
         switch (target) {
@@ -37,6 +49,7 @@ const InputButtons = ({ className, onChange, step, value, id, ...rest }) => {
                 value={value}
                 onChangeValue={(value) => hundleValueChange(value)}
                 id={id}
+                // isAllowed={isAllowed}
                 {...rest}
             />
         </div>
@@ -48,7 +61,8 @@ InputButtons.propTypes = {
     onChange: PropTypes.func.isRequired,
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     label: PropTypes.string,
-    step: PropTypes.number
+    step: PropTypes.number,
+    // isAllowed: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 };
 
 export { InputButtons };

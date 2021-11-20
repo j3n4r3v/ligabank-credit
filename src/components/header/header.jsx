@@ -17,7 +17,7 @@ const Header = () => {
             
             <MainNav className="header__nav" />
 
-            <Slider className="header__slider">
+            <Slider>
 
                 <FirstSlide className="header__first-slide" />
                 <SecondSlide className="header__second-slide" />
