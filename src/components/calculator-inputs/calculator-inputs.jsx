@@ -43,17 +43,17 @@ const CalculatorInputs = ({ className }) => {
 
     const hundleCostValidate = (value) => {
         
-        // setErrorCost(false)
+        setErrorCost(false)
 
     if ( value < minCost ) {
         value = minCost // почему не показывает при changeCost(minCost) ???
-        dispatch(changeCost(value))&&setErrorCost(true)
+        dispatch(changeCost(value))&&setErrorCost(true);
 
     } else if  (value > maxCost) {
         value = maxCost // почему не показывает при changeCost(maxCost) ???
-        dispatch(changeCost(value))&&setErrorCost(true)
+        dispatch(changeCost(value))&&setErrorCost(true);
     } 
-        return dispatch(changeCost(value))&&setErrorCost(false);
+        return dispatch(changeCost(value));
         // setErrorCost(false) --- почему так вот не работает ???
         };
 
