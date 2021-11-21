@@ -4,12 +4,12 @@
 .map {
   position: relative;
   min-width: 320px;
-  margin: 1px auto 55px;
+  margin: 1px auto 60px;
 
   @media (min-width: $tablet-width) {
     min-width: $tablet-width;
     padding: 0 45px;
-    margin-bottom: 75px;
+    margin-bottom: 81px;
     margin-top: 6px;
   }
 
@@ -17,7 +17,7 @@
     min-width: $desktop-width;
     max-width: 1366px;
     padding: 0 98px;
-    margin: 0 auto 102px;
+    margin: 0 auto 111px;
   }
 }
 

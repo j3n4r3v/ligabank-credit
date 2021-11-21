@@ -8,13 +8,13 @@
   list-style: none;
   bottom: 5%;
   left: calc(50% - 24px);
+  @media (max-width: $tablet-width) {
+    bottom: 2%;
+    left: calc(49% - 25px);
+  }
     @media (min-width: $tablet-width) {
       bottom: 3%;
       left: calc(50% - 35px);
-    }
-    @media (max-width: $tablet-width) {
-      bottom: 2%;
-      left: calc(49% - 26px);
     }
 }
 

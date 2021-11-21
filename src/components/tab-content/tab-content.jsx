@@ -40,15 +40,15 @@ const TabContent = ({ className, title, list, button, img, desc }) => {
                     {desc && <p className="tab-content__desc">{desc}</p>}
                 </div>
 
-                <div className="tab-content__button">
+                <div className="tab-content__button correct-position">
                     {button && <a href={button.href} className="tab-content__btn">{button.title}</a>}
                 </div>
             </div>
   
             <div className="tab-content__right">
                 <picture>
-                    <source srcSet={img.srcDesktop} media="(min-width: 1024.2px)" />
-                    <source srcSet={img.srcTablet} media="(min-width: 768.2px)" />
+                    <source srcSet={img.srcDesktop} media="(min-width: 1024px)" />
+                    <source srcSet={img.srcTablet} media="(min-width: 768px)" />
                         <img className="tab-content__img"
                          src={img.srcMobile}
                           alt={img.alt}

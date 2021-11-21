@@ -21,6 +21,7 @@
 
   @media (min-width: $desktop-width) {
     display: inline-block;
+    padding-left: 10px;
   }
 }
 
@@ -47,5 +48,21 @@
   &:hover,
   &:focus {
     opacity: 0.6;
+  }
+}
+
+.sign-in-mobile {
+  display: block;
+
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.sign-no-mobile {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
   }
 }

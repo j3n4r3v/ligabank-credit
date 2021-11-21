@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import './preview.scss';
 
 const Preview = ({ className, title, subtitle, button, img, isLight }) => {
-    const widthAuto = 'auto';
     return (
         <section className={`${className} preview ${isLight && 'preview--light'}`}>
             <div className="preview__wrapper">
@@ -16,13 +15,13 @@ const Preview = ({ className, title, subtitle, button, img, isLight }) => {
                     </h1>
                     {button &&
                         <a href={button.href}
-                            className={`preview__button ${isLight && 'preview__button--light'}`}>
+                            className={`preview__button ${isLight && 'preview__button--light'} preview__button--mobile`}>
                             {button.title}
                         </a>
                     }
                 </div>
                 <div className="preview__right">
-                  <img className="preview__img" src={img.src} alt={img.alt} width={widthAuto}   />
+                  <img className="preview__img" src={img.src} alt={img.alt}   />
                 </div>
             </div>
         </section>

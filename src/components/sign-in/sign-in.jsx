@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeVisibleModalLogin, logout } from '../../store/actions';
 import { saveStatusisLoginToLocalStorage } from '../../store/local-storage';
 
-import { ReactComponent as SignInImg } from './sign-in.svg';
+import { ReactComponent as SignInSvg } from './sign-in.svg';
 
 import './sign-in.scss';
 
@@ -31,7 +31,7 @@ const SignIn = ({ className }) => {
         <div className={`${className} sign-in ${mobileMenuIsOpen ? 'sign-in__mobile--burger' : ''} `}>
             <button type="button" className="sign-in__button" aria-label="sign in" onClick={() => hundleSignInClick()}>
 
-                <SignInImg />
+                <SignInSvg class="sign-mobile" />
 
                 <span className={mobileMenuIsOpen ? 'sign-in__text--burger' : 'sign-in__text'}>
 

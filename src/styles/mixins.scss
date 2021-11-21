@@ -58,7 +58,7 @@
   @media (max-width: $mobile-width-only) {
     font-size: 14px;
     line-height: 16px;
-    padding: 13px 31px;
+    padding: 13px 33px 13px 31px;
   }
 
   @media (min-width: $tablet-width) {
@@ -85,22 +85,6 @@
   &:focus {
     color: $color-background;
     background-color: $color-main;
-  }
-
-  @media (max-width: $mobile-width-only) {
-    font-size: 14px;
-    line-height: 16px;
-  }
-
-  @media (min-width: $tablet-width) {
-    font-size: 16px;
-  }
-
-  @media (min-width: $desktop-width) {
-    font-size: 18px;
-    max-width: 234px;
-    min-width: auto;
-    padding: 14px 35px;
   }
 }
 

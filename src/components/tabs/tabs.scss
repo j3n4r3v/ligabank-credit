@@ -2,19 +2,15 @@
 @import "../../styles/colors";
 
 .tabs {
-  margin-bottom: 62px;
 
   position: relative;
   min-width: 320px;
+  margin-bottom: 54px;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 68px;
+    margin-bottom: 69px;
   }
 
-  @media (max-width: $tablet-width) {
-    margin-bottom: 55px;
-  }
-  
   @media (min-width: $desktop-width) {
     padding: 0 98px;
     max-width: 1366px;

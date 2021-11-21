@@ -17,8 +17,8 @@ const OptionsList = ({ options, className, onChange, title }) => {
     const option = useSelector(state => state.option);
 
     const hundleKeyDown = (evt) => {
-        if(evt.key === 13) {
-            hundleListClick();
+        if(evt.keyCode === 13) {
+            dispatch(changeVisibleList(!listMenuIsOpen));
         }
     }
 
@@ -35,9 +35,9 @@ const OptionsList = ({ options, className, onChange, title }) => {
 
     return (
         <div className={`${className} list ${listMenuIsOpen ? 'list--open' : 'list--close'}`}
-         onClick={() => hundleListClick()} onKeyDown={() => hundleListClick()}>
+         onClick={() => hundleListClick()} onKeyDown={(evt) => hundleKeyDown(evt)}>
             <span className="list__option list__option--title" tabIndex="0">
-                {listMenuIsOpen ? title : options[option] || title}
+                {listMenuIsOpen ? title : options[option]}
             </span>
             {listMenuIsOpen && <div className={'list__options'}>
                 {Object.keys(options).map((option, i) =>
