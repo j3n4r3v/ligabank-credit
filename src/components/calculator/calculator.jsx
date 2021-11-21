@@ -41,7 +41,7 @@ const Calculator = ({ className }) => {
         dispatch(saveData({
             count: data.count,
             option: option,
-            cost: getValidValue(cost, minCost, maxCost),
+            cost: cost,
             fee: getValidValue(fee, getCostOfPercent(minFee, getValidValue(cost, minCost, maxCost)), maxFeeCost),
             period: period,
         }));

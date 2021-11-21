@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
@@ -9,6 +9,19 @@ const OptionsList = ({ options, className, onChange, title }) => {
     const [isOpenList, setIsOpenList] = useState(false);
     const option = useSelector(state => state.option);
 
+    const hundleKeyDown = (evt) => {
+        if(evt.key === 13) {
+            hundleListClick();
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('keydown', hundleKeyDown);
+    return () => {
+        window.removeEventListener('keydown', hundleKeyDown);
+        };
+    });
+
     const hundleListClick = () => {
         setIsOpenList(!isOpenList);
     };
@@ -18,7 +31,8 @@ const OptionsList = ({ options, className, onChange, title }) => {
     };
 
     return (
-        <div onClick={() => hundleListClick()} className={`${className} list ${isOpenList ? 'list--open' : 'list--close'}`}>
+        <div className={`${className} list ${isOpenList ? 'list--open' : 'list--close'}`}
+         onClick={() => hundleListClick()} onKeyDown={() => hundleListClick()}>
             <span className="list__option list__option--title" tabIndex="0">
                 {isOpenList ? title : options[option] || title}
             </span>

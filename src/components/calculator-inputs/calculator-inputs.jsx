@@ -45,28 +45,23 @@ const CalculatorInputs = ({ className }) => {
     const [errorCost, setErrorCost] = useState(false);
 
     const hundleCostValidate = (value) => {
-        
-        setErrorCost(false)
 
-        if ( value < minCost ) {
-            value = minCost // почему не показывает при changeCost(minCost) ???
-            dispatch(changeCost(value))&&setErrorCost(true);
-
-        } else if  (value > maxCost) {
-            value = maxCost // почему не показывает при changeCost(maxCost) ???
-            dispatch(changeCost(value))&&setErrorCost(true);
-        } 
-        return dispatch(changeCost(value));
-        // setErrorCost(false) --- почему так вот не работает ???
-        };
+        if ( !isFinite(Number.parseFloat(value)) || value < minCost || value > maxCost) {
+            setErrorCost(true)
+        } else {
+            setErrorCost(false)
+        }
+    };
 
     const hundleCostChange = (value) => {
+
         const validCost = Number.parseFloat(value);
+
         hundleCostValidate(validCost);
 
-        // if (isFinite(validCost)) {
-        //     dispatch(changeCost(validCost));
-        // }
+        if (isFinite(validCost)) {
+            dispatch(changeCost(validCost));
+        }
 
         if (isFinite(validCost) && value > minCost && value < maxCost) {
             dispatch(changeFee(getCostOfPercent(minFee, value)));
@@ -189,7 +184,8 @@ const CalculatorInputs = ({ className }) => {
 };
 
 CalculatorInputs.propTypes = {
-    className: PropTypes.string.isRequired
+    className: PropTypes.string.isRequired,
+    IsFinite: PropTypes.bool
 
 };
 

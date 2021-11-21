@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { InputFormat } from '../input-format/input-format';
+import { getValidValue } from '../utils/utils';
 
 import './input-buttons.scss';
 
@@ -10,17 +11,17 @@ const NamesButton = {
     MINUS: 'MINUS',
 };
 
-const InputButtons = ({ className, onChange, step, value, id, ...rest }) => {
-
+const InputButtons = (props) => {
+    const { className, onChange, step, value, id, max, min, ...rest } = props;
 
     const hundleValueChange = (target) => {
         
         switch (target) {
             case NamesButton.MINUS: {
-                return onChange(value - step) 
+                return onChange(getValidValue((value - step), props.min, props.max));
             }
             case NamesButton.PLUS: {
-                return onChange(value + step)
+                return onChange(getValidValue((value + step), props.min, props.max));
             }
             default: {
                 return onChange(target);
@@ -50,7 +51,9 @@ InputButtons.propTypes = {
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     label: PropTypes.string,
     step: PropTypes.number,
-    // isAllowed: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
+    max: PropTypes.number,
+    min: PropTypes.number,
+    getValidValue: PropTypes.func
 };
 
 export { InputButtons };

@@ -13,13 +13,18 @@
     font-size: 14px;
     line-height: 19px;
   }
+  @media (min-width: $desktop-width) {
+    width: 63%;
+    padding-bottom: 0;
+  }
 }
+
 
 .input-checkbox input {
   appearance: none;
 }
 
-label > input[type='checkbox']:focus-within {
+.input-checkbox:focus-within {
   outline: 1px solid $color-red;
 }
 

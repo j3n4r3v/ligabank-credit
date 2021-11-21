@@ -13,6 +13,7 @@ const range = (count) => {
 };
 
 const getWordsLength = (n, array) => {
+    n = n % 100;
     if ((n >= MIDDLE_WORD_LENGTH && n < MAX_WORD_LENGTH)  || (n >= MAX_OF_MAX_WORD_LENGTH) ) {
         return array[MAX_INDEX];
     } else if ((n > MIN_WORD_LENGTH && n < MIDDLE_WORD_LENGTH) || (n > MAX_WORD_LENGTH && n <= MAX_MIDDLE_WORD_LENGTH)) {
@@ -20,7 +21,7 @@ const getWordsLength = (n, array) => {
     } else if (n === MIDDLE_INDEX || n === MAX_WORD_LENGTH) {
         return array[MIN_INDEX];
     } else {
-        return array[MIN_INDEX];
+        return array[MAX_INDEX];
     }
 };
 
