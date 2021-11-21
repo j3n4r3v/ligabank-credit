@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import { ReactComponent as LogoImg } from './logo-img.svg';
 import { ReactComponent as LogoText } from './logo-text.svg';
 
+import { someValidPath } from '../utils/const';
+
 import './logo.scss';
 
 const Logo = ({ className }) => {
-    const someValidPath = '#';
     return (
         <a href={someValidPath} className={`${className} logo`}>
 

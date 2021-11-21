@@ -6,6 +6,7 @@ const initialState = {
     email: localStorage.getItem('login'),
     password: localStorage.getItem('password'),
     isLogin: localStorage.getItem('isLogin') === 'true',
+    listMenuIsOpen: false,
     option: null,
     cost: 0,
     fee: 0,
@@ -47,6 +48,11 @@ const reducer = (state = initialState, action) => {
                 email: '',
                 password: '',
                 isLogin: false
+            };
+        case Actions.CHANGE_VISIBLE_LIST:
+            return {
+                ...state,
+                listMenuIsOpen: action.payload
             };
         case Actions.ON_CHANGE_OPTION:
             return {

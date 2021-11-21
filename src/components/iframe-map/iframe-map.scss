@@ -1,4 +1,15 @@
+@import "../../styles/const-width";
+
 .leaflet-container {
+    height: 381px;
     width: 100%;
-    height: 100vh;
+    border: 0;
+  
+    @media (min-width: $tablet-width) {
+      height: 462px;
+    }
+  
+    @media (min-width: $desktop-width) {
+      height: 462px;
+    }
   }

@@ -4,6 +4,7 @@ const PASSWORD_LENGTH = 8;
 const STEP_FEE = 5;
 const MOUNTS_IN_YEAR = 12;
 const PART_PAYMENT_OF_INCOME = 45;
+const someValidPath = '#';
 
 const TabEnum = {
     DEPOSIT: 'DEPOSIT',
@@ -61,4 +62,4 @@ const AutoCreditConst = {
 };
 
 export { ESC_CODE, SLIDER_TIMEOUT, PASSWORD_LENGTH, STEP_FEE, MOUNTS_IN_YEAR, PART_PAYMENT_OF_INCOME,
-     TabEnum, TabName, CreditTarget, CreditTargetName, MortgageConst, AutoCreditConst };
+     TabEnum, TabName, CreditTarget, CreditTargetName, MortgageConst, AutoCreditConst, someValidPath };

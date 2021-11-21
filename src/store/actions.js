@@ -3,6 +3,7 @@ const Actions = {
     CHANGE_VISIBLE_MODAL_LOGIN: 'CHANGE_VISIBLE_MODAL_LOGIN',
     LOGIN: 'LOGIN',
     LOGOUT: 'LOGOUT',
+    CHANGE_VISIBLE_LIST: 'CHANGE_VISIBLE_LIST',
     ON_CHANGE_OPTION: 'ON_CHANGE_OPTION',
     CHANGE_COST: 'CHANGE_COST',
     CHANGE_FEE: 'CHANGE_FEE',
@@ -31,6 +32,11 @@ const login = (payload) => ({
 
 const logout = () => ({
     type: Actions.LOGOUT
+});
+
+const changeVisibleList = (payload) => ({
+    type: Actions.CHANGE_VISIBLE_LIST,
+    payload: payload
 });
 
 const changeOption = (payload) => ({
@@ -77,6 +83,6 @@ const deleteData = () => ({
     type: Actions.DELETE_DATA,
 });
 
-export {Actions, changeVisibleMenu, changeVisibleModalLogin, login, logout, changeOption, changeCost,
+export {Actions, changeVisibleMenu, changeVisibleModalLogin, login, logout, changeVisibleList, changeOption, changeCost,
     changeFee, changePeriod, changeUseMotherCapital, changeUseKasko,  changeUseLifeInsurance, saveData,
     deleteData};

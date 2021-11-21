@@ -4,11 +4,12 @@ import { useSelector } from 'react-redux';
 
 import { SignIn } from '../sign-in/sign-in';
 
+import { someValidPath } from '../utils/const';
+
 import './menu.scss';
 
 const Menu = ({ className }) => {
 
-    const someValidPath = '#';
     const mobileMenuIsOpen = useSelector(state => state.mobileMenuIsOpen);
 
     return (

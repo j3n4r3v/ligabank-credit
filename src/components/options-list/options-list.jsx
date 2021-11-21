@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+
+import {changeVisibleList} from '../../store/actions';
 
 import './options-list.scss';
 
 const OptionsList = ({ options, className, onChange, title }) => {
 
-    const [isOpenList, setIsOpenList] = useState(false);
+    const dispatch = useDispatch();
+    const listMenuIsOpen = useSelector(state => state.listMenuIsOpen);
+
+    const hundleListClick= () => {
+        dispatch(changeVisibleList(!listMenuIsOpen));
+    };
     const option = useSelector(state => state.option);
 
     const hundleKeyDown = (evt) => {
@@ -22,21 +29,17 @@ const OptionsList = ({ options, className, onChange, title }) => {
         };
     });
 
-    const hundleListClick = () => {
-        setIsOpenList(!isOpenList);
-    };
-
     const hundleChange = (pam) => {
         onChange(pam);
     };
 
     return (
-        <div className={`${className} list ${isOpenList ? 'list--open' : 'list--close'}`}
+        <div className={`${className} list ${listMenuIsOpen ? 'list--open' : 'list--close'}`}
          onClick={() => hundleListClick()} onKeyDown={() => hundleListClick()}>
             <span className="list__option list__option--title" tabIndex="0">
-                {isOpenList ? title : options[option] || title}
+                {listMenuIsOpen ? title : options[option] || title}
             </span>
-            {isOpenList && <div className={'list__options'}>
+            {listMenuIsOpen && <div className={'list__options'}>
                 {Object.keys(options).map((option, i) =>
                     <span 
                         onClick={() => hundleChange(option)}
