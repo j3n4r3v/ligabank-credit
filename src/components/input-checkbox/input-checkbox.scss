@@ -8,15 +8,6 @@
   padding-left: 20px;
   position: relative;
   cursor: pointer;
-
-  @media (max-width: $mobile-width-only) {
-    font-size: 14px;
-    line-height: 19px;
-  }
-  @media (min-width: $desktop-width) {
-    width: 63%;
-    padding-bottom: 0;
-  }
 }
 
 

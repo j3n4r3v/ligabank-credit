@@ -18,9 +18,6 @@ import './calculator-inputs.scss';
 
 const CalculatorInputs = ({ className }) => {
 
-    // const MIN_VAL = 12000000;
-    // const MAX_VAL = 25000000;
-
     const dispatch = useDispatch();
     const cost = useSelector(state => state.cost);
     const fee = useSelector(state => state.fee);
@@ -158,7 +155,8 @@ const CalculatorInputs = ({ className }) => {
                             className="calculator-inputs__kasko" 
                             id="kasko"
                             label="Оформить КАСКО в нашем банке"
-                            value={useKacko} onChange={(value) => hundleUseKacko(value)}
+                            value={useKacko}
+                            onChange={(value) => hundleUseKacko(value)}
                         />
 
                         <InputCheckbox

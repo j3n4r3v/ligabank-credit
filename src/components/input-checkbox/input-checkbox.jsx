@@ -6,7 +6,7 @@ import './input-checkbox.scss';
 const InputCheckbox = ({ className, value, label, onChange, id }) => {
 
     return (
-        <label className={`${className} input-checkbox`} htmlFor={id}>
+        <label className={`input-checkbox ${className}`} htmlFor={id}>
             <input
                 type="checkbox"
                 name ="checkbox"

@@ -31,3 +31,20 @@
     margin-bottom: 19px;
   }
 }
+
+.calculator-inputs__kasko,
+ .calculator-inputs__insurance,
+  .calculator-inputs__capital {
+    @media (max-width: $mobile-width-only) {
+      font-size: 14px;
+      width: 290px;
+      line-height: 19px;
+    }
+    @media (min-width: $tablet-width) {
+      width: 380px;
+    }
+    @media (min-width: $desktop-width) {
+      width: 420px;
+      padding-bottom: 0;
+    }
+}

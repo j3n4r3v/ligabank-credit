@@ -19,6 +19,8 @@ import servicesDesktop from './services-desktop.png';
 import './tab-content.scss';
 
 const TabContent = ({ className, title, list, button, img, desc }) => {
+    const minWidth = 87;
+    const minHeight = 113;
     return (
         <section className={`${className} tab-content`}>
             <div className="tab-content__left">
@@ -50,8 +52,8 @@ const TabContent = ({ className, title, list, button, img, desc }) => {
                         <img className="tab-content__img"
                          src={img.srcMobile}
                           alt={img.alt}
-                          width= "87"
-                          height= "113"
+                          width= {minWidth}
+                          height= {minHeight}
                         />
                 </picture>
             </div>
