@@ -14,7 +14,7 @@ const NamesButton = {
 const InputButtons = (props) => {
     const { className, onChange, step, value, id, max, min, ...rest } = props;
 
-    const hundleValueChange = (target) => {
+    const handleValueChange = (target) => {
         
         switch (target) {
             case NamesButton.MINUS: {
@@ -31,13 +31,13 @@ const InputButtons = (props) => {
 
     return (
         <div className={`input-buttons ${className}`}>
-            <button onClick={(evt) => hundleValueChange(evt.target.name)} className="input-buttons__button input-buttons__button--minus" name={NamesButton.MINUS}>−</button>
-            <button onClick={(evt) => hundleValueChange(evt.target.name)} className="input-buttons__button input-buttons__button--plus" name={NamesButton.PLUS}>+</button>
+            <button onClick={(evt) => handleValueChange(evt.target.name)} className="input-buttons__button input-buttons__button--minus" name={NamesButton.MINUS}>−</button>
+            <button onClick={(evt) => handleValueChange(evt.target.name)} className="input-buttons__button input-buttons__button--plus" name={NamesButton.PLUS}>+</button>
 
             <InputFormat
                 className="input-buttons__input"
                 value={value}
-                onChangeValue={(value) => hundleValueChange(value)}
+                onChangeValue={(value) => handleValueChange(value)}
                 id={id}
                 {...rest}
             />

@@ -41,7 +41,7 @@ const CalculatorInputs = ({ className }) => {
     const [percent, setPercent] = useState(minFee);
     const [errorCost, setErrorCost] = useState(false);
 
-    const hundleCostValidate = (value) => {
+    const handleCostValidate = (value) => {
 
         if ( !isFinite(Number.parseFloat(value)) || value < minCost || value > maxCost) {
             setErrorCost(true)
@@ -50,11 +50,11 @@ const CalculatorInputs = ({ className }) => {
         }
     };
 
-    const hundleCostChange = (value) => {
+    const handleCostChange = (value) => {
 
         const validCost = Number.parseFloat(value);
 
-        hundleCostValidate(validCost);
+        handleCostValidate(validCost);
 
         if (isFinite(validCost)) {
             dispatch(changeCost(validCost));
@@ -67,33 +67,33 @@ const CalculatorInputs = ({ className }) => {
         }
     };
 
-    const hundleFeeValidate = () => {
+    const handleFeeValidate = () => {
         const validFee = getValidValue(fee, getCostOfPercent(minFee, cost), maxFeeCost);
         dispatch(changeFee(validFee));
         setPercent(getPercentOfCost(validFee, cost));
     };
 
-    const hundleFeeChange = (fee) => {
+    const handleFeeChange = (fee) => {
         dispatch(changeFee(fee));
         setPercent(getPercentOfCost(fee, cost));
     };
 
-    const hundlePeriodValidate = () => {
+    const handlePeriodValidate = () => {
         dispatch(changePeriod(getValidValue(period, minPeriod, maxPeriod)));
     };
 
-    const hundlePeriodChange = (value) => {
+    const handlePeriodChange = (value) => {
         dispatch(changePeriod(value));
     };
 
-    const hundleUseMotherCapital = (value) => {
+    const handleUseMotherCapital = (value) => {
         dispatch(changeUseMotherCapital(value));
     };
-    const hundleUseLifeInsurance = (value) => {
+    const handleUseLifeInsurance = (value) => {
         dispatch(changeUseLifeInsurance(value));
     };
 
-    const hundleUseKacko = (value) => {
+    const handleUseKacko = (value) => {
         dispatch(changeUseKasko(value));
     };
 
@@ -110,16 +110,16 @@ const CalculatorInputs = ({ className }) => {
                     max={maxCost}
                     mask={getWordsLength(cost, [' рубль', ' рубля', ' рублей'])}
                     step={stepCost}
-                    onChange={(value) => hundleCostChange(value)}
+                    onChange={(value) => handleCostChange(value)}
                     label={`Стоимость ${isAutoCredit ? 'автомобиля' : 'недвижимости'}`}
                     desc={`${errorCost ? 'Введите сумму от' : 'От'} ${minCost.toLocaleString()} до ${maxCost.toLocaleString()} рублей`}
                 />
                 <Range
                     className="calculator-inputs__range"
                     id="input-range"
-                    onChangeInput={(value) => hundleFeeChange(value)}
-                    onChangeRange={(evt) => hundleFeeChange(getCostOfPercent(evt.target.value, cost))}
-                    onBlur={() => hundleFeeValidate()}
+                    onChangeInput={(value) => handleFeeChange(value)}
+                    onChangeRange={(evt) => handleFeeChange(getCostOfPercent(evt.target.value, cost))}
+                    onBlur={() => handleFeeValidate()}
                     range={percent}
                     value={fee}
                     mask={getWordsLength(fee, ['рубль', 'рубля', 'рублей'])}
@@ -133,9 +133,9 @@ const CalculatorInputs = ({ className }) => {
                 <Range
                     className="calculator-inputs__range"
                     id="input-ages"
-                    onChangeInput={(value) => hundlePeriodChange(value)}
-                    onChangeRange={(evt) => hundlePeriodChange(evt.target.value)}
-                    onBlur={() => hundlePeriodValidate()}
+                    onChangeInput={(value) => handlePeriodChange(value)}
+                    onChangeRange={(evt) => handlePeriodChange(evt.target.value)}
+                    onBlur={() => handlePeriodValidate()}
                     value={period}
                     range={period}
                     min={minPeriod}
@@ -156,7 +156,7 @@ const CalculatorInputs = ({ className }) => {
                             id="kasko"
                             label="Оформить КАСКО в нашем банке"
                             value={useKacko}
-                            onChange={(value) => hundleUseKacko(value)}
+                            onChange={(value) => handleUseKacko(value)}
                         />
 
                         <InputCheckbox
@@ -164,7 +164,7 @@ const CalculatorInputs = ({ className }) => {
                             id="insurance"
                             label="Оформить Страхование жизни в нашем банке"
                             value={useLifeInsurance}
-                            onChange={(value) => hundleUseLifeInsurance(value)}
+                            onChange={(value) => handleUseLifeInsurance(value)}
                         />
                     </>
 
@@ -173,7 +173,7 @@ const CalculatorInputs = ({ className }) => {
                             id="capital"
                             label="Использовать материнский капитал"
                             value={useMotherCapital}
-                            onChange={(value) => hundleUseMotherCapital(value)}
+                            onChange={(value) => handleUseMotherCapital(value)}
                       />
                 }
             </div>

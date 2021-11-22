@@ -37,7 +37,7 @@ const Calculator = ({ className }) => {
     const maxFeeCost = getValidValue(cost, minCost, maxCost) - minCredit - MortgageConst.PARENT_CAPITAL * (useMotherCapital && !isAutoCredit);
     const minFee = isAutoCredit ? AutoCreditConst.MIN_FEE : MortgageConst.MIN_FEE;
 
-    const hundleSuggestBtnClick = () => {
+    const handleSuggestBtnClick = () => {
         dispatch(saveData({
             count: data.count,
             option: option,
@@ -47,7 +47,7 @@ const Calculator = ({ className }) => {
         }));
         setIsOpenForm(true);
     };
-    const hundleSubmitClick = ({ name, phone, email }) => {
+    const handleSubmitClick = ({ name, phone, email }) => {
         dispatch(deleteData());
         dispatch(saveData({
             count: data.count
@@ -64,12 +64,12 @@ const Calculator = ({ className }) => {
             <h2 className="calculator__title">Кредитный калькулятор</h2>
             <CalculatorOptions
                 className="calculator__options"
-                onSuggestBtnClick={() => hundleSuggestBtnClick()}
+                onSuggestBtnClick={() => handleSuggestBtnClick()}
             />
             {isOpenForm &&
                 <Summary
                     className="calculator__summary"
-                    onClick={(userData) => hundleSubmitClick(userData)}
+                    onClick={(userData) => handleSubmitClick(userData)}
                 />}
 
             {successIsOpen &&

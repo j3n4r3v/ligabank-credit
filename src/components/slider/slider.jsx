@@ -10,8 +10,6 @@ import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import 'swiper/swiper.scss';
 import './pagination.scss';
 
-// SwiperCore.use([Autoplay, Pagination, Keyboard]);
-
 const Slider = ({children }) => {
 
     return (

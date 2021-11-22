@@ -2,7 +2,7 @@ import React, {useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {useSelector, useDispatch} from 'react-redux';
 
-import {changeVisibleList} from '../../store/actions';
+import {changeVisibleList, changeOption} from '../../store/actions';
 
 import './options-list.scss';
 
@@ -11,38 +11,40 @@ const OptionsList = ({ options, className, onChange, title }) => {
     const dispatch = useDispatch();
     const listMenuIsOpen = useSelector(state => state.listMenuIsOpen);
 
-    const hundleListClick= () => {
+    const handleListClick= () => {
         dispatch(changeVisibleList(!listMenuIsOpen));
     };
     const option = useSelector(state => state.option);
 
-    const hundleKeyDown = (evt) => {
-        if(evt.keyCode === 13) {
+    const handleKeyDown = (evt) => {
+        if(evt.key === 'Enter') {
             dispatch(changeVisibleList(!listMenuIsOpen));
         }
     }
 
     useEffect(() => {
-        window.addEventListener('keydown', hundleKeyDown);
+        window.addEventListener('keydown', handleKeyDown);
     return () => {
-        window.removeEventListener('keydown', hundleKeyDown);
+        window.removeEventListener('keydown', handleKeyDown);
         };
     });
 
-    const hundleChange = (pam) => {
-        onChange(pam);
+    const handleChange = (option) => {
+        onChange(option);
     };
+
 
     return (
         <div className={`${className} list ${listMenuIsOpen ? 'list--open' : 'list--close'}`}
-         onClick={() => hundleListClick()} onKeyDown={(evt) => hundleKeyDown(evt)}>
+         onClick={() => handleListClick()} onKeyDown={(evt) => handleKeyDown(evt)}>
             <span className="list__option list__option--title" tabIndex="0">
-                {listMenuIsOpen ? title : options[option]}
+                {listMenuIsOpen ? title : options[option] || title}
             </span>
             {listMenuIsOpen && <div className={'list__options'}>
                 {Object.keys(options).map((option, i) =>
                     <span 
-                        onClick={() => hundleChange(option)}
+                        onClick={() => handleChange(option)}
+                        onKeyDown={() => onChange(option)}
                         key={option + i}
                         className="list__option"
                         tabIndex="0">

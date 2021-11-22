@@ -1,4 +1,5 @@
 const ESC_CODE = 27;
+const ENTER_CODE = 27;
 const SLIDER_TIMEOUT = 4000000;
 const PASSWORD_LENGTH = 8;
 const STEP_FEE = 5;
@@ -61,5 +62,5 @@ const AutoCreditConst = {
     MONEY_BORDER: 2000000
 };
 
-export { ESC_CODE, SLIDER_TIMEOUT, PASSWORD_LENGTH, STEP_FEE, MOUNTS_IN_YEAR, PART_PAYMENT_OF_INCOME,
+export { ESC_CODE, ENTER_CODE, SLIDER_TIMEOUT, PASSWORD_LENGTH, STEP_FEE, MOUNTS_IN_YEAR, PART_PAYMENT_OF_INCOME,
      TabEnum, TabName, CreditTarget, CreditTargetName, MortgageConst, AutoCreditConst, someValidPath };

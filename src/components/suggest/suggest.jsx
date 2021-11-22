@@ -18,7 +18,7 @@ import './suggest.scss';
 
 const Suggest = ({ className, onClick }) => {
 
-    const hundleClick = () => {
+    const handleClick = () => {
         onClick();
     }
 
@@ -111,7 +111,7 @@ const Suggest = ({ className, onClick }) => {
             <Button
                 className="suggest__button"
                 nameButton="Оформить заявку"
-                onClick={() => hundleClick()}
+                onClick={() => handleClick()}
                 name="make a request"
             />
         </section>

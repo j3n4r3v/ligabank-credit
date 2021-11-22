@@ -12,7 +12,7 @@ const Main = () => {
 
             <Calculator className="credit__calculator" />
 
-            <Map className="credit__map">Map</Map>
+            <Map className="credit__map" />
             
         </main>
     );

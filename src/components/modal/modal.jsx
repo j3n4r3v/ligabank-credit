@@ -10,27 +10,27 @@ const Modal = ({children, onClickCloseModal}) => {
     const overlayRef = useRef();
 
     useEffect(() => {
-            document.addEventListener('keydown', hundleEscClick);
+            document.addEventListener('keydown', handleEscClick);
             document.body.style.overflow = "hidden";
         return () => {
-            document.removeEventListener('keydown', hundleEscClick);
+            document.removeEventListener('keydown', handleEscClick);
             document.body.style.overflow = "auto"
         };
     });
 
-    const hundleEscClick = (event) => {
+    const handleEscClick = (event) => {
         if (event.keyCode === ESC_CODE) {
             onClickCloseModal();
         }
     };
 
-    const hundleOverlayClick = (evt) => {
+    const handleOverlayClick = (evt) => {
         evt.target === overlayRef.current && onClickCloseModal();
     };
 
     return (
         <div className="overlay" ref={overlayRef}
-            onClick={(evt) => hundleOverlayClick(evt)}>
+            onClick={(evt) => handleOverlayClick(evt)}>
             <div className="modal">
 
                     {children}

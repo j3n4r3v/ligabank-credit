@@ -16,7 +16,7 @@ const SignIn = ({ className }) => {
     const email = useSelector(state => state.email);
     const isLogin = useSelector(state => state.isLogin);
 
-    const hundleSignInClick = () => {
+    const handleSignInClick = () => {
         if (isLogin) {
             saveStatusisLoginToLocalStorage(false);
             dispatch(logout());
@@ -29,9 +29,9 @@ const SignIn = ({ className }) => {
 
     return (
         <div className={`${className} sign-in ${mobileMenuIsOpen ? 'sign-in__mobile--burger' : ''} `}>
-            <button type="button" className="sign-in__button" aria-label="sign in" onClick={() => hundleSignInClick()}>
+            <button type="button" className="sign-in__button" aria-label="sign in" onClick={() => handleSignInClick()}>
 
-                <SignInSvg class="sign-mobile" />
+                <SignInSvg classname = "sign-mobile" />
 
                 <span className={mobileMenuIsOpen ? 'sign-in__text--burger' : 'sign-in__text'}>
 

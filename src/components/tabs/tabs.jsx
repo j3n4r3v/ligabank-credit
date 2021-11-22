@@ -27,12 +27,12 @@ const Tabs = ({ className }) => {
 
     };
 
-    const hundleTabClick = () => {
+    const handleTabClick = () => {
         setActiveTab(tabOrders[(tabOrders.indexOf(activeTab) + 1) % tabOrders.length]);
     };
 
     return (
-        <section className={`tabs ${className}`} onTouchMove={hundleTabClick}>
+        <section className={`tabs ${className}`} onTouchMove={handleTabClick}>
             <h2 className="visually-hidden">Наши предложения</h2>
             <div className="tabs__wrapper">
                 {tabOrders.map((tab, i) =>

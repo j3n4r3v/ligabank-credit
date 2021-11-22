@@ -20,20 +20,20 @@ const MainNav = ({ className }) => {
 
     useEffect(() => {
         if (mobileMenuIsOpen) {
-            document.addEventListener('keydown', hundleEscClick);
+            document.addEventListener('keydown', handleEscClick);
         }
         return () => {
-            document.removeEventListener('keydown', hundleEscClick);
+            document.removeEventListener('keydown', handleEscClick);
         };
     });
 
-    const hundleEscClick = (event) => {
+    const handleEscClick = (event) => {
         if (event.keyCode === ESC_CODE) {
-            hundleClickClose();
+            handleClickClose();
         }
     };
 
-    const hundleClickClose = () => {
+    const handleClickClose = () => {
         dispatch(changeVisibleMenu(!mobileMenuIsOpen));
     };
 
@@ -48,7 +48,7 @@ const MainNav = ({ className }) => {
 
             {mobileMenuIsOpen
 
-                ? <CloseButton className="main-nav__close" onClick={() => hundleClickClose()} />
+                ? <CloseButton className="main-nav__close" onClick={() => handleClickClose()} />
 
                 : <SignIn className="main-nav__sign-in" />
             }

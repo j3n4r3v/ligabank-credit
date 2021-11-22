@@ -23,11 +23,11 @@ const Summary = ({ className, onClick}) => {
     const [userData, setUserData] = useState({ name: data.name, phone: data.phone, email: data.email });
     const [error, setError] = useState({});
 
-    const hundleClick = (pam) => {
+    const handleClick = (pam) => {
         onClick(pam);
     }
 
-    const hundleSubmitClick = () => {
+    const handleSubmitClick = () => {
         const phoneInvalid = validateField('phone', userData.phone);    
         setError((prevError) => ({ ...prevError, phone: phoneInvalid }));
         const nameInvalid = validateField('name', userData.name);
@@ -36,7 +36,7 @@ const Summary = ({ className, onClick}) => {
         setError((prevError) => ({ ...prevError, email: emailInvalid }));
         if (!emailInvalid && !phoneInvalid && !nameInvalid) {
             setError({});
-            hundleClick(userData);
+            handleClick(userData);
         }
     };
 
@@ -139,7 +139,7 @@ const Summary = ({ className, onClick}) => {
             <Button
                 className="summary__submit"
                 nameButton="Отправить"
-                onClick={() => hundleSubmitClick()}
+                onClick={() => handleSubmitClick()}
                 name="submit summary info by credit"
             />
 

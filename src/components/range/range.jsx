@@ -6,11 +6,11 @@ import './range.scss';
 
 const Range = ({className, label, desc, value, max, min, step, range, onChangeInput, onChangeRange, id, ...rest}) => {
 
-    const hundleChangeInput = (pam) => {
+    const handleChangeInput = (pam) => {
         onChangeInput(pam);
     };
 
-    const hundleChangeRange = (pam) => {
+    const handleChangeRange = (pam) => {
         onChangeRange(pam);
     };
 
@@ -19,7 +19,7 @@ const Range = ({className, label, desc, value, max, min, step, range, onChangeIn
 
             <InputFormat
                 className="range__input"
-                onChangeValue={(value) => hundleChangeInput(value)}
+                onChangeValue={(value) => handleChangeInput(value)}
                 label={label}
                 value={value}
                 id={id}
@@ -29,7 +29,7 @@ const Range = ({className, label, desc, value, max, min, step, range, onChangeIn
             <input
                 className="range__slider"
                 id={id}
-                onChange={(evt) => hundleChangeRange(evt)}
+                onChange={(evt) => handleChangeRange(evt)}
                 type="range"
                 step={step}
                 value={range}
