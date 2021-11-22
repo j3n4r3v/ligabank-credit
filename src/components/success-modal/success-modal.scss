@@ -7,13 +7,13 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 80;
+  z-index: 1000;
   background: rgba($color-service, 0.7);
 }
 
 .modal {
   position: relative;
-  z-index: 80;
+  z-index: 1000;
   width: fit-content;
   margin: 10% auto;
 }
