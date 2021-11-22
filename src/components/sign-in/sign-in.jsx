@@ -31,7 +31,7 @@ const SignIn = ({ className }) => {
         <div className={`${className} sign-in ${mobileMenuIsOpen ? 'sign-in__mobile--burger' : ''} `}>
             <button type="button" className="sign-in__button" aria-label="sign in" onClick={() => handleSignInClick()}>
 
-                <SignInSvg classname = "sign-mobile" />
+                <SignInSvg className = "sign-mobile" />
 
                 <span className={mobileMenuIsOpen ? 'sign-in__text--burger' : 'sign-in__text'}>
 

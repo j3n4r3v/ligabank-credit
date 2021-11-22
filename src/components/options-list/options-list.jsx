@@ -2,7 +2,8 @@ import React, {useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {useSelector, useDispatch} from 'react-redux';
 
-import {changeVisibleList, changeOption} from '../../store/actions';
+import {changeVisibleList} from '../../store/actions';
+import { ENTER_CODE } from '../utils/const';
 
 import './options-list.scss';
 
@@ -16,8 +17,8 @@ const OptionsList = ({ options, className, onChange, title }) => {
     };
     const option = useSelector(state => state.option);
 
-    const handleKeyDown = (evt) => {
-        if(evt.key === 'Enter') {
+    const handleKeyDown = (event) => {
+        if(event.keyCode === ENTER_CODE) {
             dispatch(changeVisibleList(!listMenuIsOpen));
         }
     }
