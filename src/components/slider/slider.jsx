@@ -5,12 +5,34 @@ import './slider.scss';
 
 import { SLIDER_TIMEOUT } from '../utils/const';
 
-import { Autoplay, Pagination} from 'swiper';
+import realIndex, { Autoplay, Pagination} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import 'swiper/swiper.scss';
 import './pagination.scss';
 
 const Slider = ({children }) => {
+
+    const slides = document.querySelectorAll(".swiper-slide");
+    console.log(slides);
+
+
+    const makeAllButCurrentSlideInert = (realIndex) => {
+        const currentSlide = slides[realIndex];
+      
+        slides.forEach((slide) => {
+          if (slide !== currentSlide) {
+            slide.setAttribute("inert", "");
+          } else {
+            slide.removeAttribute("inert");
+          }
+        });
+      };
+
+      const makeCurrentSlideFocus = (realIndex) => {
+      const currentSlide = slides[realIndex];
+      currentSlide.setAttribute("tabindex", "-1");
+      currentSlide.focus();
+    };
 
     return (
 
@@ -23,6 +45,9 @@ const Slider = ({children }) => {
                 'delay': SLIDER_TIMEOUT,
                 'disableOnInteraction': false
             }}
+            onSlideChange={() => makeAllButCurrentSlideInert(realIndex)}
+            onSwiper={() => makeAllButCurrentSlideInert(realIndex)}
+            onSlideChangeTransitionEnd = {() => makeCurrentSlideFocus(realIndex)}
         >
 
         <section className="slider">
